@@ -291,14 +291,6 @@
                                             </div>
                                         </div>
 
-                                          <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-password-input">Dirección (2)</label>
-                                            <div class="col-md-12">
-                                                    {{Form::text('direccion_2', $facturacion->drieccion_2, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
-                                            </div>
-                                        </div>
-
-
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Ciudad</label>
                                             <div class="col-md-12">
@@ -319,6 +311,37 @@
                                                   {{Form::text('c_postal', $facturacion->c_postal, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
                                               </div>
                                             </div>
+
+                                         <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Dirección (2)</label>
+                                            <div class="col-md-12">
+                                                    {{Form::text('direccion_2', $facturacion->drieccion_2, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                            </div>
+                                        </div>
+
+                                         <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Ciudad (2)</label>
+                                            <div class="col-md-12">
+                                                  {{Form::text('ciudad_2', $facturacion->ciudad_2, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                              </div>
+                                            </div>
+
+
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Estado (2)</label>
+                                            <div class="col-md-12">
+                                                  {{Form::text('estado_2', $facturacion->estado_2, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                              </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Código Postal (2)</label>
+                                            <div class="col-md-12">
+                                                  {{Form::text('c_postal_2', $facturacion->c_postal_2, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                              </div>
+                                            </div>
+
 
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Fecha inicio</label>

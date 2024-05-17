@@ -414,6 +414,29 @@ function mostrar(id) {
                                             </div>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Ciudad (2)</label>
+                                            <div class="col-md-12">
+                                                  {{Form::text('ciudad_2', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                              </div>
+                                            </div>
+
+
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Estado (2)</label>
+                                            <div class="col-md-12">
+                                                  {{Form::text('estado_2', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                              </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Código Postal (2)</label>
+                                            <div class="col-md-12">
+                                                  {{Form::text('c_postal_2', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                              </div>
+                                            </div>
+
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Fecha inicio</label>
                                             <div class="col-md-12 ">
