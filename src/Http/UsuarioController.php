@@ -193,6 +193,9 @@ public function create() {
  $facturacion->ciudad = Input:: get ('ciudad');
  $facturacion->estado = Input:: get ('estado');
  $facturacion->c_postal = Input:: get ('c_postal');
+ $facturacion->ciudad_2 = Input:: get ('ciudad_2');
+ $facturacion->estado_2 = Input:: get ('estado_2');
+ $facturacion->c_postal_2 = Input:: get ('c_postal_2');
  $facturacion->f_inicio = Input:: get ('f_inicio');
  $facturacion->s_actual = Input:: get ('s_actual');
  $facturacion->save();
@@ -223,6 +226,9 @@ public function actualizarempresa($id){
  $facturacion->ciudad = Input:: get ('ciudad');
  $facturacion->estado = Input:: get ('estado');
  $facturacion->c_postal = Input:: get ('c_postal');
+ $facturacion->ciudad_2 = Input:: get ('ciudad_2');
+ $facturacion->estado_2 = Input:: get ('estado_2');
+ $facturacion->c_postal_2 = Input:: get ('c_postal_2');
  $facturacion->f_inicio = Input:: get ('f_inicio');
  $facturacion->s_actual = Input:: get ('s_actual');
  $facturacion->save();
