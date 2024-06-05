@@ -315,7 +315,7 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Dirección (2)</label>
                                             <div class="col-md-12">
-                                                    {{Form::text('direccion_2', $facturacion->drieccion_2, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                    {{Form::text('direccion_2', $facturacion->direccion_2, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
                                             </div>
                                         </div>
 

@@ -45,7 +45,7 @@
                                             <label class="col-md-3 control-label" for="example-select">Banco</label>
                                             <div class="col-md-12">
 
-                                                <select name="banco" id="inputConcepto" class="form-control">
+                                                <select name="banco" id="inputConcepto" class="form-control" required>
         <option value="" disabled selected>Seleccione Banco</option>
         @foreach($bancos as $bancos)
           <option value="{{$bancos->id}}">{{$bancos->banco}}</option>
@@ -57,14 +57,14 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Usuario</label>
                                             <div class="col-md-12">
-                                                {{Form::text('usuario', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación' ))}}
+                                                {{Form::text('usuario', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación','Required'=>'Nombre Required'))}}
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Contraseña</label>
                                             <div class="col-md-9">
-                                                {{Form::text('password', '', array('class' => 'form-control','placeholder'=>'Nombre Representante' ))}}
+                                                {{Form::text('password', '', array('class' => 'form-control','placeholder'=>'Nombre Representante','Required'=>'Nombre Required' ))}}
                                             </div>
                                         </div>
 

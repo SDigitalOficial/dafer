@@ -67,8 +67,8 @@ function mostrar(id) {
   <div class="col-md-12">
   <select  class="form-control" name="status" onchange="mostrar(this.value);">
         <option selected>--- Elige persona ---</option>
-        <option value="estudiante">Crear Cliente</option>
-        <option value="trabajador">Crear Empresa</option>
+        <option value="estudiante">Crear Cliente Individual</option>
+        <option value="trabajador">Crear Cliente Empresa</option>
      </select>
    <br><br>
   </div>
@@ -83,7 +83,7 @@ function mostrar(id) {
                                     <div class="card m-b-30">
                                         <div class="card-body">
             
-                                            <h4 class="mt-0 header-title">Crear Empresa</h4>
+                                            <h4 class="mt-0 header-title">Crear Cliente Empresa</h4>
                                             <p class="text-muted font-14">Parsley is a javascript form validation
                                                 library. It helps you provide your users with feedback on their form
                                                 submission before sending it to your server.</p>
@@ -278,7 +278,7 @@ function mostrar(id) {
                                     <div class="card m-b-30">
                                         <div class="card-body">
             
-                                            <h4 class="mt-0 header-title">Crear Cliente</h4>
+                                            <h4 class="mt-0 header-title">Crear Cliente Individual</h4>
                                             <p class="text-muted font-14">Parsley is a javascript form validation
                                                 library. It helps you provide your users with feedback on their form
                                                 submission before sending it to your server.</p>

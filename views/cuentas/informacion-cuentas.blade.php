@@ -42,17 +42,17 @@
                                                 {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('dafer/crear-cuentas'))) }}
                                                     <div class="form-group m-l-10">
                                                         <label class="sr-only" for="exampleInputEmail2">Plataforma</label>
-                                                        <input type="text" class="form-control ml-2" name="plataforma" id="exampleInputEmail2" placeholder="Plataforma">
+                                                        <input type="text" class="form-control ml-2" name="plataforma" id="exampleInputEmail2" placeholder="Plataforma" required>
                                                     </div>
                                                         
                                                     <div class="form-group m-l-10">
                                                         <label class="sr-only" for="exampleInputPassword2">Correo/Usuario</label>
-                                                        <input type="text" class="form-control ml-2" name="correo" id="exampleInputPassword2" placeholder="Correo/Usuario">
+                                                        <input type="text" class="form-control ml-2" name="correo" id="exampleInputPassword2" placeholder="Correo/Usuario" required>
                                                     </div>
 
                                                     <div class="form-group m-l-10">
                                                         <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-                                                        <input type="text" class="form-control ml-2" name="contrasena" id="exampleInputPassword2" placeholder="Password">
+                                                        <input type="text" class="form-control ml-2" name="contrasena" id="exampleInputPassword2" placeholder="Password" required>
 
                                                         <input type="hidden" class="form-control ml-2" value="{{Request::segment(3)}}" name="empresa_id" id="exampleInputPassword2" placeholder="Password">
                                                     </div>

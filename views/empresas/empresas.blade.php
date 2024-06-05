@@ -39,7 +39,7 @@
 
                                                                  <div class="content-header">
  <ul class="nav-horizontal text-center">
-  <a class="btn btn-primary waves-effect waves-light" href="/dafer/crear-empresa"><i class="fas fa-store"></i> Crear Empresa</a>
+  <a class="btn btn-primary waves-effect waves-light" href="/dafer/crear-empresa"><i class="fas fa-store"></i> Crear Cliente</a>
 </ul>
 </div>
                                     <div class="card">
@@ -78,7 +78,7 @@
             @if($facturacion->tipo == 1)
             <span class="badge badge-secondary">Empresa</span></td>
             @else
-            <span class="badge badge-primary">Cliente</span></td>
+            <span class="badge badge-primary">Individual</span></td>
             @endif
           <td class="text-center">
               {{$facturacion->n_negocio}}
