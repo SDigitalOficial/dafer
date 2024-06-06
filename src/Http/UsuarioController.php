@@ -233,7 +233,7 @@ public function actualizarempresa($id){
  $facturacion->s_actual = Input:: get ('s_actual');
  $facturacion->save();
 
- return Redirect('/dafer/empresas')->with('status', 'ok_create');
+ return Redirect('/dafer/editar-empresa/'.$id)->with('status', 'ok_create');
 }
 
  public function eliminarempresa($id){

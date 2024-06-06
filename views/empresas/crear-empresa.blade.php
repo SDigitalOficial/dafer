@@ -238,7 +238,7 @@ function mostrar(id) {
                                               </div>
                                             </div>
                                          <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-password-input">Fecha inicio</label>
+                                            <label class="col-md-3 control-label" for="example-password-input">Fecha de Creación</label>
                                             <div class="col-md-12 ">
                                                   {{Form::date('f_inicio','', array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio'))}}
                                             </div>
@@ -438,7 +438,7 @@ function mostrar(id) {
                                             </div>
 
                                          <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-password-input">Fecha inicio</label>
+                                            <label class="col-md-3 control-label" for="example-password-input">Fecha de Creación</label>
                                             <div class="col-md-12 ">
                                                   {{Form::date('f_inicio','', array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio'))}}
                                             </div>
