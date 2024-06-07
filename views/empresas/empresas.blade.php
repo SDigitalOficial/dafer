@@ -5,32 +5,7 @@
   @section('ContenidoSite-01')
 
 
- <div class="container">
-  <?php $status=Session::get('status'); ?>
-  @if($status=='ok_create')
-   <div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>Cliente registrado con éxito</strong>
-   </div>
-  @endif
-
-  @if($status=='ok_delete')
-   <div class="alert alert-danger">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>Ciente eliminado con éxito</strong>
-   </div>
-  @endif
-
-  @if($status=='ok_update')
-   <div class="alert alert-warning">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>Cliente actualizado con éxito</strong>
-   </div>
-  @endif
-
- </div>
-
-
+ 
 
 
 
@@ -41,16 +16,36 @@
  <ul class="nav-horizontal text-center">
   <a class="btn btn-primary waves-effect waves-light" href="/dafer/crear-empresa"><i class="fas fa-store"></i> Crear Cliente</a>
 </ul>
+<div class="container">
+  <?php $status=Session::get('status'); ?>
+  @if($status=='ok_create')
+   <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>CLIENTE REGISTRADO CON EXITO</strong>
+   </div>
+  @endif
+
+  @if($status=='ok_delete')
+   <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>CLIENTE ELIMINADO CON EXITO</strong>
+   </div>
+  @endif
+
+  @if($status=='ok_update')
+   <div class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>CLIENTE ACTUALIZADO CON EXITO</strong>
+   </div>
+  @endif
+
+ </div>
 </div>
                                     <div class="card">
                                         <div class="card-body">
             
-                                            <h4 class="mt-0 header-title"><b>Clientes Registrados</b></h4>
-                                            <p class="text-muted  font-14">The Buttons extension for DataTables
-                                                provides a common set of options, API methods and styling to display
-                                                buttons on a page that will interact with a DataTable. The core library
-                                                provides the based framework upon which plug-ins can built.
-                                            </p>
+                                            <h4 class="mt-0 header-title"><b>CLIENTES REGISTRADOS</b></h4>
+                                            
             
                                             <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
 

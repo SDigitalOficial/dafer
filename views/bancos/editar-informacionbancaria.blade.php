@@ -17,6 +17,32 @@
 
 @section('ContenidoSite-01')
 
+
+<div class="container">
+  <?php $status=Session::get('status'); ?>
+  @if($status=='ok_create')
+   <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>Cliente registrado con éxito</strong>
+   </div>
+  @endif
+
+  @if($status=='ok_delete')
+   <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>Ciente eliminado con éxito</strong>
+   </div>
+  @endif
+
+  @if($status=='ok_update')
+   <div class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>Datos actualizados con éxito</strong>
+   </div>
+  @endif
+
+ </div>
+
 <div class="row">
                                 <div class="col-md-12 col-xl-10 offset-xl-2">
                                     <div class="content-header">
@@ -38,7 +64,7 @@
                                                 submission before sending it to your server.</p>
                                     
                                     <!-- Basic Form Elements Content -->
-                                  {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('dafer/crear-infobancaria'))) }}
+                                  {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('/dafer/editar-infobancarias/'.Request::segment(3)))) }}
                                   
      @foreach($banco as $bancosa)
                                   @endforeach
@@ -79,7 +105,9 @@
                                         
 
                                       
-                                        {{Form::hidden('empresa_id', Request::segment(3), array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+                                        {{Form::hidden('empresa_id', $bancosa->empresa_id, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+
+                                        {{Form::hidden('banco_id', $bancosa->banco_id, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
                                         
     
 

@@ -47,46 +47,33 @@ function mostrar(id) {
 
 @section('ContenidoSite-01')
 
-<div class="container">
+
+
+<div class="container">   
  <div class="row">
- <div class="col-md-12 col-xl-12">
-  <div class="content-header">
-   <ul class="nav-horizontal text-center">
-    <a class="btn btn-primary waves-effect waves-light" href="/dafer/usuarios"><i class="gi gi-parents"></i> Usuarios</a>
-    <a class="btn btn-primary waves-effect waves-light" href="/dafer/crear-usuario"><i class="fa fa-user-plus"></i> Crear Usuario</a>
-   </ul>
+  <label class="col-md-3 control-label" for="example-select">Tipo de cliente</label>
+   <div class="col-md-12">
+    <select  class="form-control" name="status" onchange="mostrar(this.value);">
+     <option selected>--- Elige persona ---</option>
+     <option value="estudiante">Crear Cliente Individual</option>
+     <option value="trabajador">Crear Cliente Empresa</option>
+    </select>
+   <br><br>
   </div>
  </div>
 </div>
-</div>
 
-<div class="container">   
-<div class="row">
 
- <label class="col-md-3 control-label" for="example-select">Tipo de cliente</label>
-  <div class="col-md-12">
-  <select  class="form-control" name="status" onchange="mostrar(this.value);">
-        <option selected>--- Elige persona ---</option>
-        <option value="estudiante">Crear Cliente Individual</option>
-        <option value="trabajador">Crear Cliente Empresa</option>
-     </select>
-   <br><br>
-  </div>
 
-</div>
-</div>
-
+<div class="container">
 
 <div id="trabajador" class="element" style="display: none;">
-                                <div class="block">
 
-                                    <div class="card m-b-30">
-                                        <div class="card-body">
-            
-                                            <h4 class="mt-0 header-title">Crear Cliente Empresa</h4>
-                                            <p class="text-muted font-14">Parsley is a javascript form validation
-                                                library. It helps you provide your users with feedback on their form
-                                                submission before sending it to your server.</p>
+ <div class="blockss">
+  <div class="card m-b-30">
+   <div class="card-body">
+    <h4 class="mt-0 header-title"><b>CREAR CLIENTE EMPRESA</b><br></h4>
+                                            <p class="text-muted font-14"></p>
                                     
                                     <!-- Basic Form Elements Content -->
                                   {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('dafer/crear-empresa'))) }}
@@ -143,6 +130,8 @@ function mostrar(id) {
                                             <label class="col-md-3 control-label" for="example-password-input">Teléfono (1)</label>
                                             <div class="col-md-12 date" id="datetimepicker7">
                                                    {{Form::text('tel_1', '', array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+
+
                                             </div>
                                         </div>
 
@@ -261,7 +250,7 @@ function mostrar(id) {
                                           
                                         <div class="form-group form-actions">
                                             <div class="col-md-9 col-md-offset-3">
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Crear Cliente</button>
                                                 <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
                                             </div>
                                         </div>
@@ -278,10 +267,8 @@ function mostrar(id) {
                                     <div class="card m-b-30">
                                         <div class="card-body">
             
-                                            <h4 class="mt-0 header-title">Crear Cliente Individual</h4>
-                                            <p class="text-muted font-14">Parsley is a javascript form validation
-                                                library. It helps you provide your users with feedback on their form
-                                                submission before sending it to your server.</p>
+                                            <h4 class="mt-0 header-title"><b>CREAR CLIENTE INDIVUDUAL<br><br></b></h4>
+                                            <p class="text-muted font-14"></p>
                                     
                                     <!-- Basic Form Elements Content -->
                                   {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('dafer/crear-empresa'))) }}
@@ -461,7 +448,7 @@ function mostrar(id) {
                                           
                                         <div class="form-group form-actions">
                                             <div class="col-md-9 col-md-offset-3">
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Crear Cliente</button>
                                                 <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
                                             </div>
                                         </div>
@@ -471,7 +458,7 @@ function mostrar(id) {
                                     </div>
                                 </div> <!-- end col --></div>
 
-
+</div>
      {{ Html::script('modulo-facturacion/js/moment.min.js') }}
      {{ Html::script('modulo-facturacion/js/bootstrap-datetimepicker.min.js') }}
      

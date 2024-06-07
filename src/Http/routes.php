@@ -25,6 +25,7 @@ Route::get('dafer/informacion-producto/{id}', 'DigitalsiteSaaS\Dafer\Http\Usuari
 Route::get('dafer/cuentas-asignadas/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@infocuentas');
 Route::get('dafer/eliminar-infobancaria/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@eliminarinfobancaria');
 Route::get('dafer/editar-infobancaria/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarbancaria');
+Route::post('dafer/editar-infobancarias/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@posteditarbancaria');
 
 
 Route::get('dafer/bancos', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@bancos');

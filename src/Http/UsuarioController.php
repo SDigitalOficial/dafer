@@ -233,7 +233,7 @@ public function actualizarempresa($id){
  $facturacion->s_actual = Input:: get ('s_actual');
  $facturacion->save();
 
- return Redirect('/dafer/editar-empresa/'.$id)->with('status', 'ok_create');
+ return Redirect('/dafer/editar-empresa/'.$id)->with('status', 'ok_update');
 }
 
  public function eliminarempresa($id){
@@ -475,6 +475,10 @@ public function crearcuenta() {
 }
 
 
+
+
+
+
 public function productos(){
 if(!$this->tenantName){
 $productos = Producto::all();
@@ -555,6 +559,28 @@ if(!$this->tenantName){
 
  return view('dafer::bancos.editar-informacionbancaria')->with('banco', $banco)->with('bancos', $bancos);
 }
+
+public function posteditarbancaria($id){
+ $input = Input::all();
+ if(!$this->tenantName){
+ $banco = informacion::find($id);
+ }else{
+ $banco = \DigitalsiteSaaS\Dafer\Tenant\informacion::find($id);
+ }
+ $banco->banco_id = Input::get('banco');
+ $banco->usuario = Input::get('usuario');
+ $banco->password = Input::get('password');
+ $banco->informacion = Input::get('informacion');
+ $banco->empresa_id = Input::get('empresa_id');
+ $banco->banco_id = Input::get('banco_id');
+ $banco->save();
+
+
+ return Redirect('/dafer/editar-infobancaria/'.$banco->empresa_id)->with('status', 'ok_update');
+}
+
+
+
 
 public function editarbancos($id){
  $input = Input::all();
