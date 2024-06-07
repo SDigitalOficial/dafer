@@ -563,9 +563,9 @@ if(!$this->tenantName){
 public function posteditarbancaria($id){
  $input = Input::all();
  if(!$this->tenantName){
- $banco = informacion::find($id);
+ $banco = Informacion::find($id);
  }else{
- $banco = \DigitalsiteSaaS\Dafer\Tenant\informacion::find($id);
+ $banco = \DigitalsiteSaaS\Dafer\Tenant\Informacion::find($id);
  }
  $banco->banco_id = Input::get('banco');
  $banco->usuario = Input::get('usuario');
@@ -574,8 +574,6 @@ public function posteditarbancaria($id){
  $banco->empresa_id = Input::get('empresa_id');
  $banco->banco_id = Input::get('banco_id');
  $banco->save();
-
-
  return Redirect('/dafer/editar-infobancaria/'.$banco->empresa_id)->with('status', 'ok_update');
 }
 
