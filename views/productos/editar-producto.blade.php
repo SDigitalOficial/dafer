@@ -32,7 +32,7 @@
                                     <div class="card m-b-30">
                                         <div class="card-body">
             
-                                            <h4 class="mt-0 header-title">Crear Infotrmación Bancaria</h4>
+                                            <h4 class="mt-0 header-title">Editar Producto y/o Servicio</h4>
                                             <p class="text-muted font-14">Parsley is a javascript form validation
                                                 library. It helps you provide your users with feedback on their form
                                                 submission before sending it to your server.</p>
@@ -61,7 +61,7 @@
                                           
                                         <div class="form-group form-actions">
                                             <div class="col-md-9 col-md-offset-3">
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Editar Producto y/o Servicio</button>
                                                 <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
                                             </div>
                                         </div>

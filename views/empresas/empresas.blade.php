@@ -10,7 +10,7 @@
 
 
                             <div class="row">
-                                <div class="col-md-10 offset-md-1">
+                                <div class="col-md-12">
 
                                                                  <div class="content-header">
  <ul class="nav-horizontal text-center">
@@ -68,7 +68,7 @@
                                                 <tbody>
            @foreach($facturacion as $facturacion)                                      
          <tr>
-            <td> <a href="<?=URL::to('dafer/editar-producto');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="left" title="Detalle Empresa" class="btn btn-primary"><i class="mdi mdi-eye"></i></span></a></td>
+            <td> <a href="<?=URL::to('dafer/resumen-cliente');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="left" title="Detalle Empresa" class="btn btn-primary"><i class="mdi mdi-eye"></i></span></a></td>
           <td class="text-center">
             @if($facturacion->tipo == 1)
             <span class="badge badge-secondary">Empresa</span></td>
@@ -102,6 +102,7 @@
            <div class="btn-group">
            
        <a href="<?=URL::to('dafer/editar-empresa');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="left" title="Editar Usuario" class="btn btn-primary"><i class="mdi mdi-tooltip-edit"></i></span></a>
+       <a href="<?=URL::to('dafer/pagos');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="left" title="Editar Usuario" class="btn btn-primary"><i class="fas fa-money-check"></i></span></a>
        <a href="<?=URL::to('dafer/informacion-bancaria');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Información Bancaria" class="btn btn-primary"><i class="mdi mdi-bank"></i></span></a>
        <a href="<?=URL::to('dafer/informacion-producto');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="bottom" title="Productos/Servicios" class="btn btn-primary"><i class="fas fa-shopping-bag"></i></span></a>
        <a href="<?=URL::to('dafer/cuentas-asignadas');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Cuentas Asignadas" class="btn btn-primary"><i class="far fa-list-alt"></i></span></a>

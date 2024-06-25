@@ -42,6 +42,28 @@ function mostrar(id) {
   }
 }
 </script>
+<script type="text/javascript">
+    $(document).ready(function () {
+  toggleFields();
+  $("#t_identificacion").change(function () {
+    toggleFields();
+  });
+});
+
+function toggleFields() {
+  if ($("#t_identificacion").val() === "2") {
+    $("#n_identificacion").show();
+  } else {
+    $("#n_identificacion").hide();
+  }
+  if ($("#t_identificacion").val() === "3") {
+    $("#n_identificacion1").show();
+  } else {
+    $("#n_identificacion1").hide();
+  }
+}
+
+</script>
 
     @stop
 
@@ -81,7 +103,7 @@ function mostrar(id) {
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-email-input">Nombre del Negocio</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('n_negocio', '', array('class' => 'form-control','placeholder'=>'Ingrese nombre o razón social' ))}}
+                                                  {{Form::text('n_negocio', '', array('class' => 'form-control','placeholder'=>'Ingrese nombre o razón social', 'Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -99,7 +121,7 @@ function mostrar(id) {
                                                  '8' => 'NJ Foreign Limited Partnership (LF)',
                                                  '9' => 'NJ Foreign Limited Liability Partnership (FLP)',
                                                  '10' => 'NJ Foreign Non-Profit Corportion (NF)',
-                                                 '11' => 'NJ Domestic Non-Profit Veteran Corporation (NV)'], null, array('class' => 'form-control','placeholder'=>'-- Seleccione tipo identificación --')) }}
+                                                 '11' => 'NJ Domestic Non-Profit Veteran Corporation (NV)'], null, array('class' => 'form-control','placeholder'=>'-- Seleccione tipo identificación --','Required' => 'Required')) }}
                                              </div>
                                         </div>
 
@@ -107,21 +129,21 @@ function mostrar(id) {
                                             <label class="col-md-3 control-label" for="example-select">Tipo identificación</label>
                                             <div class="col-md-12">
                                                  {{ Form::select('t_identificacion', [
-                                                 '1' => 'EIN'], null, array('class' => 'form-control','placeholder'=>'-- Seleccione tipo identificación --')) }}
+                                                 '1' => 'EIN'], null, array('class' => 'form-control','placeholder'=>'-- Seleccione tipo identificación --', 'Required' => 'Required')) }}
                                              </div>
                                         </div>
 
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Número de identificación</label>
                                             <div class="col-md-12">
-                                                {{Form::text('n_identificacion', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación' ))}}
+                                                {{Form::text('n_identificacion', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación','Required' => 'Required','data-mask' => '99-9999999' ))}}
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Representante empresa</label>
                                             <div class="col-md-9">
-                                                {{Form::text('representante', '', array('class' => 'form-control','placeholder'=>'Nombre Representante' ))}}
+                                                {{Form::text('representante', '', array('class' => 'form-control','placeholder'=>'Nombre Representante','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -129,9 +151,7 @@ function mostrar(id) {
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Teléfono (1)</label>
                                             <div class="col-md-12 date" id="datetimepicker7">
-                                                   {{Form::text('tel_1', '', array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
-
-
+                                                   {{Form::text('tel_1', '', array('class' => 'form-control','placeholder'=>'Ingrese Telefono', 'Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -153,14 +173,14 @@ function mostrar(id) {
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Correo electrónico (1)</label>
                                             <div class="col-md-12">
-                                                 {{Form::text('email', '', array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico' ))}}
+                                                 {{Form::email('email', '', array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico', 'Required' => 'Required','parsley-type'=>'email' ))}}
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Correo electrónico (2)</label>
                                             <div class="col-md-12">
-                                                 {{Form::text('email_dos', '', array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico' ))}}
+                                                 {{Form::email('email_dos', '', array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico', 'parsley-type'=>'email'))}}
                                             </div>
                                         </div>
 
@@ -168,14 +188,14 @@ function mostrar(id) {
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Dirección</label>
                                             <div class="col-md-12">
-                                                    {{Form::text('direccion_1', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                    {{Form::text('direccion_1', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección', 'Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Ciudad</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('ciudad', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('ciudad', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección', 'Required' => 'Required' ))}}
                                               </div>
                                             </div>
 
@@ -184,14 +204,14 @@ function mostrar(id) {
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Estado</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('estado', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('estado', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección', 'Required' => 'Required' ))}}
                                               </div>
                                             </div>
 
                                             <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Código Postal</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('c_postal', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('c_postal', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                               </div>
                                             </div>
 
@@ -229,7 +249,7 @@ function mostrar(id) {
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Fecha de Creación</label>
                                             <div class="col-md-12 ">
-                                                  {{Form::date('f_inicio','', array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio'))}}
+                                                  {{Form::date('f_inicio','', array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio','Required' => 'Required'))}}
                                             </div>
                                         </div>
 
@@ -240,7 +260,7 @@ function mostrar(id) {
                                                  {{ Form::select('s_actual', [
                                                  '1' => 'Activo',
                                                  '2' => 'Inactivo',
-                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control','placeholder'=>'-- Seleccione situación cliente --')) }}
+                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control','placeholder'=>'-- Seleccione situación cliente --','Required' => 'Required')) }}
                                             </div>
                                         </div>
 
@@ -280,7 +300,7 @@ function mostrar(id) {
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-email-input">Nombre del Cliente</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('n_negocio', '', array('class' => 'form-control','placeholder'=>'Ingrese nombre o razón social' ))}}
+                                                  {{Form::text('n_negocio', '', array('class' => 'form-control','placeholder'=>'Ingrese nombre o razón social','Required' => 'Required' ))}}
                                             </div>
                                         </div>
                                         <!--
@@ -308,21 +328,24 @@ function mostrar(id) {
                                             <div class="col-md-12">
                                                  {{ Form::select('t_identificacion', [
                                                  '2' => 'Seguro Social',
-                                                 '3' => 'Número ITIN'], null, array('class' => 'form-control','placeholder'=>'-- Seleccione tipo identificación --')) }}
+                                                 '3' => 'Número ITIN'], null, array('class' => 'form-control','placeholder'=>'-- Seleccione tipo identificación --','Required' => 'Required', 'id' => 't_identificacion')) }}
                                              </div>
                                         </div>
 
-                                         <div class="form-group">
+
+                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Número de identificación</label>
                                             <div class="col-md-12">
-                                                {{Form::text('n_identificacion', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación' ))}}
+                                                {{Form::text('n_identificacion', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación', 'data-mask' => '999-99-9999','Required' => 'Required','id' => 'n_identificacion'  ))}}
+
+                                                 {{Form::text('n_identificacion', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación', 'data-mask' => '999-99-9999','Required' => 'Required','id' => 'n_identificacion1'  ))}}
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Representante empresa</label>
                                             <div class="col-md-9">
-                                                {{Form::text('representante', '', array('class' => 'form-control','placeholder'=>'Nombre Representante' ))}}
+                                                {{Form::text('representante', '', array('class' => 'form-control','placeholder'=>'Nombre Representante','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -330,7 +353,7 @@ function mostrar(id) {
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Teléfono (1)</label>
                                             <div class="col-md-12 date" id="datetimepicker7">
-                                                   {{Form::text('tel_1', '', array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+                                                   {{Form::text('tel_1', '', array('class' => 'form-control','placeholder'=>'Ingrese Telefono','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -351,14 +374,14 @@ function mostrar(id) {
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Correo electrónico</label>
                                             <div class="col-md-12">
-                                                 {{Form::text('email', '', array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico' ))}}
+                                                 {{Form::email('email', '', array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico','Required' => 'Required','parsley-type'=>'email' ))}}
                                             </div>
                                         </div>
 
                                            <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Correo electrónico (2)</label>
-                                            <div class="col-md-12">
-                                                 {{Form::text('email_dos', '', array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico' ))}}
+                            <div class="col-md-12">
+        {{Form::email('email_dos', '', array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico','parsley-type'=>'email'))}}
                                             </div>
                                         </div>
 
@@ -368,27 +391,27 @@ function mostrar(id) {
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Ciudad</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('ciudad', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('ciudad', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                               </div>
                                             </div>
                                               <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Dirección (1)</label>
                                             <div class="col-md-12">
-                                                    {{Form::text('direccion_1', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                    {{Form::text('direccion_1', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Estado</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('estado', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('estado', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                               </div>
                                             </div>
 
                                             <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Código Postal</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('c_postal', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('c_postal', '', array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                               </div>
                                             </div>
 
@@ -427,7 +450,7 @@ function mostrar(id) {
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Fecha de Creación</label>
                                             <div class="col-md-12 ">
-                                                  {{Form::date('f_inicio','', array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio'))}}
+                                                  {{Form::date('f_inicio','', array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio','Required' => 'Required'))}}
                                             </div>
                                         </div>
 
@@ -438,7 +461,7 @@ function mostrar(id) {
                                                  {{ Form::select('s_actual', [
                                                  '1' => 'Activo',
                                                  '2' => 'Inactivo',
-                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control','placeholder'=>'-- Seleccione situación cliente --')) }}
+                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control','placeholder'=>'-- Seleccione situación cliente --','Required' => 'Required')) }}
                                             </div>
                                         </div>
 
@@ -459,501 +482,10 @@ function mostrar(id) {
                                 </div> <!-- end col --></div>
 
 </div>
-     {{ Html::script('modulo-facturacion/js/moment.min.js') }}
-     {{ Html::script('modulo-facturacion/js/bootstrap-datetimepicker.min.js') }}
+    
+
+ <!-- Parsley js -->
      
 
 
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#defaultForm').bootstrapValidator({
-        message: 'This value is not valid',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            terceros: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-             regimen: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            p_apellido: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo identificador debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-           s_apellido: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo identificador debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            p_nombre: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 100,
-                        message: 'El campo razón social debe contener un minimo de 2 y un maximo de 100 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            s_nombre: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo identificador debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            t_documento: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            documento: {
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    stringLength: {
-                        min: 2,
-                        max: 20,
-                        message: 'El campo NIT debe contener un minimo de 2 y un maximo de 20 Caracteres'
-                    },
-                    remote: {
-                        type: 'GET',
-                        url: '/gestor/validacionesado',
-                        message: 'Este número cliente ya se encuentra registrado',
-                        delay: 2000
-                    }
-                }
-            },
-            direccion: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 50,
-                        message: 'El campo dirección debe contener un minimo de 2 y un maximo de 50 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[-# a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            ciudad: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo ciudad debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[- a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            telefono: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo teléfono debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            email: {
-                validators: {
-                   notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    emailAddress: {
-                        message: 'La dirección de correo no es valida'
-                    }
-                }
-            },
-            situacion: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-
-             start: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'The date is required and cannot be empty'
-                    }
-                }
-            },
-         
-            retefuente: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                      stringLength: {
-                        min: 1,
-                        max: 4,
-                        message: 'El campo retefiuente debe contener un minimo de 1 y un maximo de 2 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-        }
-    });
-});
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#defaultForm1').bootstrapValidator({
-        message: 'This value is not valid',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            terceros: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-             regimen: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            p_apellido: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo identificador debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-           s_apellido: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo identificador debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            p_nombre: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 100,
-                        message: 'El campo razón social debe contener un minimo de 2 y un maximo de 100 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            s_nombre: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo identificador debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            t_documento: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            documento: {
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    stringLength: {
-                        min: 2,
-                        max: 20,
-                        message: 'El campo NIT debe contener un minimo de 2 y un maximo de 20 Caracteres'
-                    },
-                    remote: {
-                        type: 'GET',
-                        url: '/gestor/validacionesado',
-                        message: 'Este número cliente ya se encuentra registrado',
-                        delay: 2000
-                    }
-                }
-            },
-            direccion: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 50,
-                        message: 'El campo dirección debe contener un minimo de 2 y un maximo de 50 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[-# a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            ciudad: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo ciudad debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[- a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            telefono: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo teléfono debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            email: {
-                validators: {
-                   notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    emailAddress: {
-                        message: 'La dirección de correo no es valida'
-                    }
-                }
-            },
-            situacion: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-
-             start: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'The date is required and cannot be empty'
-                    }
-                }
-            },
-         
-            retefuente: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                      stringLength: {
-                        min: 1,
-                        max: 4,
-                        message: 'El campo retefiuente debe contener un minimo de 1 y un maximo de 2 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-        }
-    });
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('#datetimepicker8').datetimepicker({
-      pickTime: true,
-      format: 'MM/DD/YYYY'
-
-    });
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('#datetimepicker9').datetimepicker({
-      pickTime: true,
-      format: 'MM/DD/YYYY'
-
-    });
-});
-</script>
 @stop

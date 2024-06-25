@@ -145,6 +145,21 @@ return view('dafer::empresas.empresas')->with('facturacion', $facturacion);
 }
 
 
+public function resumen($id){
+if(!$this->tenantName){
+$empresa = Empresa::all();
+}
+else{
+$empresa = \DigitalsiteSaaS\Dafer\Tenant\Empresa::where('id','=',$id)->get();
+$productos = \DigitalsiteSaaS\Dafer\Tenant\Infoproducto::join('dafer_productos','dafer_productos.id', '=', 'dafer_infoproductos.producto_id')->where('dafer_infoproductos.empresa_id','=',$id)->get();
+$bancos = \DigitalsiteSaaS\Dafer\Tenant\Informacion::join('dafer_bancos','dafer_bancos.id', '=', 'dafer_infobancaria.banco_id')->where('dafer_infobancaria.empresa_id','=',$id)->get();
+}
+
+return view('dafer::empresas.resumen')->with('empresa', $empresa)->with('productos', $productos)->with('bancos', $bancos);
+     
+}
+
+
 public function crearempresa() {
  return View('dafer::empresas.crear-empresa');
 }
@@ -535,7 +550,7 @@ public function editarproductos($id){
  $producto->producto = Input::get('producto');
  $producto->save();
 
- return Redirect('/dafer/productos')->with('status', 'ok_create');
+ return Redirect('/dafer/productos')->with('status', 'ok_update');
 }
 
 public function editarbanco($id){
@@ -590,7 +605,7 @@ public function editarbancos($id){
  $banco->banco = Input::get('banco');
  $banco->save();
 
- return Redirect('/dafer/bancos')->with('status', 'ok_create');
+ return Redirect('/dafer/bancos')->with('status', 'ok_update');
 }
 
 
@@ -616,6 +631,78 @@ $detalle = \DigitalsiteSaaS\Dafer\Tenant\Empresa::join('dafer_infobancaria','daf
 return view('dafer::bancos.informacion-bancaria')->with('datos', $datos);
      
 }
+
+
+public function pagos($id){
+
+if(!$this->tenantName){
+ $pagosw = Pagos::find($id);
+ }else{
+ $pagosw = \DigitalsiteSaaS\Dafer\Tenant\Pagos::join('dafer_empresas','dafer_empresas.id', '=', 'dafer_pagos.empresa_id')->join('dafer_infobancaria','dafer_infobancaria.id', '=', 'dafer_infobancaria.empresa_id')->where('dafer_empresas.id','=',$id)->select('dafer_pagos.id','n_negocio','dafer_pagos.empresa_id','fecha_pago','pago_mensual','banco_id','usuario','password')->orderBy('fecha_pago', 'ASC')->get();
+
+}
+
+$bancos = \DigitalsiteSaaS\Dafer\Tenant\Banco::all();
+
+return view('dafer::pagos.pagos')->with('pagosw', $pagosw)->with('bancos', $bancos);
+}
+
+public function crearpagos() {
+ if(!$this->tenantName){
+ $pagos = new Pagos;
+ }
+ else{
+ $pagos = new \DigitalsiteSaaS\Dafer\Tenant\Pagos;  
+ }
+ $pagos->fecha_pago = Input::get('fecha');
+ $pagos->pago_mensual = Input::get('valor');
+ $pagos->empresa_id = Input::get('empresa_id');
+ $pagos->save();
+
+  return Redirect('/dafer/pagos/'.$pagos->empresa_id)->with('status', 'ok_create');
+}
+
+public function eliminarpagos($id){
+
+ if(!$this->tenantName){
+  $pagos = Pagos::find($id);
+ }else{
+  $pagos = \DigitalsiteSaaS\Dafer\Tenant\Pagos::find($id); 
+  $delete =   \DigitalsiteSaaS\Dafer\Tenant\Pagos::where('id','=',$id)->get();
+  foreach($delete as $delete){
+    $eliminar = $delete->empresa_id;
+  }
+ } 
+ 
+  $pagos->delete();
+   return Redirect('dafer/pagos/'.$eliminar)->with('status', 'ok_delete');
+}
+
+
+public function editarpagos($id){
+  if(!$this->tenantName){
+  $pagos = Pagos::find($id);
+  }else{
+  $pagos = \DigitalsiteSaaS\Dafer\Tenant\Pagos::find($id); 
+  }
+  return view('dafer::pagos.editar-pago')->with('pagos', $pagos);
+ }
+
+
+ public function editarpago($id){
+ $input = Input::all();
+ if(!$this->tenantName){
+ $pagos = Pagos::find($id);
+ }else{
+ $pagos = \DigitalsiteSaaS\Dafer\Tenant\Pagos::find($id);
+ }
+ $pagos->fecha_pago = Input::get('fecha');
+ $pagos->pago_mensual = Input::get('valor');
+ $pagos->empresa_id = Input::get('empresa_id');
+ $pagos->save();
+ return Redirect('/dafer/pagos/'.$pagos->empresa_id)->with('status', 'ok_update');
+}
+
 
 
 

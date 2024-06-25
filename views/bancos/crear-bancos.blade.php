@@ -8,10 +8,8 @@
                                     <div class="content-header">
  <ul class="nav-horizontal text-center">
 
-   <a class="btn btn-primary waves-effect waves-light" href="/dafer/usuarios"><i class="gi gi-parents"></i> Usuarios</a>
+   <a class="btn btn-primary waves-effect waves-light" href="/dafer/bancos"><i class="mdi mdi-bank"></i> Bancos</a>
  
-
-   <a class="btn btn-primary waves-effect waves-light" href="/dafer/crear-banco"><i class="fa fa-user-plus"></i> Crear Usuario</a>
 
  </ul>
 </div>
@@ -29,14 +27,14 @@
     <div class="form-group">
      <label class="col-md-3 control-label" for="example-text-input">Banco</label>
       <div class="col-md-12">
-       {{Form::text('banco', '', array('class' => 'form-control','placeholder'=>'Ingrese nombre'))}}
+       {{Form::text('banco', '', array('class' => 'form-control','placeholder'=>'Ingrese Nombre Banco', 'Required'=>'Required'))}}
       </div>
     </div>
 
 
     <div class="form-group form-actions">
      <div class="col-md-9 col-md-offset-3">
-      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Crear</button>
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Crear Banco</button>
       <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Cancelar</button>
      </div>
     </div>

@@ -58,6 +58,14 @@ Route::get('dafer/cproductos/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioControlle
 Route::get('dafer/productos/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@detalle');
 
 Route::get('dafer/detalle-empresa/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@detalle');
+
+Route::get('dafer/resumen-cliente/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@resumen');
+
+Route::get('dafer/pagos/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@pagos');
+Route::post('dafer/crear-pagos', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearpagos');
+Route::get('dafer/eliminar-pago/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@eliminarpagos');
+Route::get('dafer/editar-pago/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarpagos');
+Route::post('dafer/editarpagos/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarpago');
 });
 
 

@@ -63,7 +63,7 @@
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Contraseña</label>
-                                            <div class="col-md-9">
+                                            <div class="col-md-12">
                                                 {{Form::text('password', '', array('class' => 'form-control','placeholder'=>'Nombre Representante','Required'=>'Nombre Required' ))}}
                                             </div>
                                         </div>

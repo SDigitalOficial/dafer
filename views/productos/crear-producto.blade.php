@@ -22,17 +22,16 @@
                                     <div class="content-header">
  <ul class="nav-horizontal text-center">
 
-   <a class="btn btn-primary waves-effect waves-light" href="/dafer/usuarios"><i class="gi gi-parents"></i> Usuarios</a>
+   <a class="btn btn-primary waves-effect waves-light" href="/dafer/productos"><i class="fas fa-shopping-bag"></i> Productos y/o Servicios</a>
  
 
-   <a class="btn btn-primary waves-effect waves-light" href="/dafer/crear-usuario"><i class="fa fa-user-plus"></i> Crear Usuario</a>
 
  </ul>
 </div>
                                     <div class="card m-b-30">
                                         <div class="card-body">
             
-                                            <h4 class="mt-0 header-title">Crear Infotrmación Bancaria</h4>
+                                            <h4 class="mt-0 header-title">Crear Producto y/o Servicio</h4>
                                             <p class="text-muted font-14">Parsley is a javascript form validation
                                                 library. It helps you provide your users with feedback on their form
                                                 submission before sending it to your server.</p>
@@ -43,9 +42,9 @@
 
                                 
                                          <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-password-input">Producto</label>
+                                            <label class="col-md-3 control-label" for="example-password-input">Producto y/o Servicio</label>
                                             <div class="col-md-12">
-                                                {{Form::text('producto', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación' ))}}
+                        {{Form::text('producto', '', array('class' => 'form-control','placeholder'=>'Ingrese Nombre Producto y/o Servicio', 'Required'=>'Required' ))}}
                                             </div>
                                         </div>
 
@@ -59,7 +58,7 @@
                                           
                                         <div class="form-group form-actions">
                                             <div class="col-md-9 col-md-offset-3">
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Crear producto y/o servicio</button>
                                                 <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
                                             </div>
                                         </div>

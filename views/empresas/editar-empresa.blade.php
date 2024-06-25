@@ -3,13 +3,14 @@
 
     @section('cabecera')
     @parent
-    <link rel="stylesheet" href="/validaciones/dist/css/bootstrapValidator.css"/>
+   
+       <link rel="stylesheet" href="/validaciones/dist/css/bootstrapValidator.css"/>
 
     <script type="text/javascript" src="/validaciones/vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/validaciones/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/validaciones/dist/js/bootstrapValidator.js"></script>
    
-   {{ Html::style('Calendario/css/bootstrap-datetimepicker.min.css') }}
+   {{ Html::style('modulo-facturacion/css/bootstrap-datetimepicker.min.css') }}
     @stop
 
 @section('ContenidoSite-01')
@@ -57,7 +58,7 @@
                                        <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-email-input">Nombre del Negocio</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('n_negocio', $facturacion->n_negocio, array('class' => 'form-control','placeholder'=>'Ingrese nombre o razón social' ))}}
+                                                  {{Form::text('n_negocio', $facturacion->n_negocio, array('class' => 'form-control','placeholder'=>'Ingrese nombre o razón social','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -75,7 +76,7 @@
                                                  '8' => 'NJ Foreign Limited Partnership (LF)',
                                                  '9' => 'NJ Foreign Limited Liability Partnership (FLP)',
                                                  '10' => 'NJ Foreign Non-Profit Corportion (NF)',
-                                                 '11' => 'NJ Domestic Non-Profit Veteran Corporation (NV)'], null, array('class' => 'form-control')) }}
+                                                 '11' => 'NJ Domestic Non-Profit Veteran Corporation (NV)'], null, array('class' => 'form-control','Required' => 'Required')) }}
                                              </div>
                                         </div>
 
@@ -83,21 +84,21 @@
                                             <label class="col-md-3 control-label" for="example-select">Tipo identificación</label>
                                             <div class="col-md-12">
                                                  {{ Form::select('t_identificacion', [$facturacion->t_identificacion => $facturacion->t_identificacion,
-                                                 '1' => 'EIN'], null, array('class' => 'form-control')) }}
+                                                 '1' => 'EIN'], null, array('class' => 'form-control','Required' => 'Required')) }}
                                              </div>
                                         </div>
 
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Número de identificación</label>
                                             <div class="col-md-12">
-                                                {{Form::text('n_identificacion', $facturacion->n_identificacion, array('class' => 'form-control','placeholder'=>'Ingrese número identificación' ))}}
+                                                {{Form::text('n_identificacion', $facturacion->n_identificacion, array('class' => 'form-control','placeholder'=>'Ingrese número identificación','Required' => 'Required','data-mask' => '99-9999999' ))}}
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Representante empresa</label>
                                             <div class="col-md-9">
-                                                {{Form::text('representante', $facturacion->representante, array('class' => 'form-control','placeholder'=>'Nombre Representante' ))}}
+                                                {{Form::text('representante', $facturacion->representante, array('class' => 'form-control','placeholder'=>'Nombre Representante','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -105,7 +106,7 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Teléfono (1)</label>
                                             <div class="col-md-12 date" id="datetimepicker7">
-                                                   {{Form::text('tel_1', $facturacion->tel_1, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+                                                   {{Form::text('tel_1', $facturacion->tel_1, array('class' => 'form-control','placeholder'=>'Ingrese Telefono','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -127,7 +128,7 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Correo electrónico (1)</label>
                                             <div class="col-md-12">
-                                                 {{Form::text('email', $facturacion->email, array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico' ))}}
+                                                 {{Form::text('email', $facturacion->email, array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -142,7 +143,7 @@
                                               <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Dirección</label>
                                             <div class="col-md-12">
-                                                    {{Form::text('direccion_1', $facturacion->direccion_1, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                    {{Form::text('direccion_1', $facturacion->direccion_1, array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -150,21 +151,21 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Ciudad</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('ciudad', $facturacion->ciudad, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('ciudad', $facturacion->ciudad, array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                               </div>
                                             </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Estado</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('estado', $facturacion->estado, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('estado', $facturacion->estado, array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                               </div>
                                             </div>
 
                                             <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Código Postal</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('c_postal', $facturacion->c_postal, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('c_postal', $facturacion->c_postal, array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                               </div>
                                             </div>
                                         
@@ -202,7 +203,7 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Fecha inicio</label>
                                             <div class="col-md-12 ">
-                                                  {{Form::date('f_inicio',$facturacion->f_inicio, array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio'))}}
+                                                  {{Form::date('f_inicio',$facturacion->f_inicio, array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio','Required' => 'Required'))}}
                                             </div>
                                         </div>
 
@@ -213,7 +214,7 @@
                                                  {{ Form::select('s_actual', [$facturacion->s_actual => $facturacion->s_actual,
                                                  '1' => 'Activo',
                                                  '2' => 'Inactivo',
-                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control')) }}
+                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control','Required' => 'Required')) }}
                                             </div>
                                         </div>
 
@@ -231,7 +232,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-email-input">Nombre del Negocio</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('n_negocio', $facturacion->n_negocio, array('class' => 'form-control','placeholder'=>'Ingrese nombre o razón social' ))}}
+                                                  {{Form::text('n_negocio', $facturacion->n_negocio, array('class' => 'form-control','placeholder'=>'Ingrese nombre o razón social','Required' => 'Required'))}}
                                             </div>
                                         </div>
 
@@ -242,14 +243,14 @@
                                             <div class="col-md-12">
                                                  {{ Form::select('t_identificacion', [$facturacion->t_identificacion => $facturacion->t_identificacion,
                                                  '2' => 'Seguro Social',
-                                                 '3' => 'Número ITIN'], null, array('class' => 'form-control')) }}
+                                                 '3' => 'Número ITIN'], null, array('class' => 'form-control','Required' => 'Required')) }}
                                              </div>
                                         </div>
 
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Número de identificación</label>
                                             <div class="col-md-12">
-                                                {{Form::text('n_identificacion', $facturacion->n_identificacion, array('class' => 'form-control','placeholder'=>'Ingrese número identificación' ))}}
+                                                {{Form::text('n_identificacion', $facturacion->n_identificacion, array('class' => 'form-control','placeholder'=>'Ingrese número identificación','Required' => 'Required','data-mask' => '999-99-9999' ))}}
                                             </div>
                                         </div>
 
@@ -264,7 +265,7 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Teléfono (1)</label>
                                             <div class="col-md-12 date" id="datetimepicker7">
-                                                   {{Form::text('tel_1', $facturacion->tel_1, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+                                                   {{Form::text('tel_1', $facturacion->tel_1, array('class' => 'form-control','placeholder'=>'Ingrese Telefono','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
@@ -286,35 +287,35 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Correo electrónico</label>
                                             <div class="col-md-12">
-                                                 {{Form::text('email', $facturacion->email, array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico' ))}}
+                                                 {{Form::text('email', $facturacion->email, array('class' => 'form-control','placeholder'=>'Ingrese Correo electronico','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
                                           <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Dirección (1)</label>
                                             <div class="col-md-12">
-                                                    {{Form::text('direccion_1', $facturacion->direccion_1, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                    {{Form::text('direccion_1', $facturacion->direccion_1, array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                             </div>
                                         </div>
 
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Ciudad</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('ciudad', $facturacion->ciudad, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('ciudad', $facturacion->ciudad, array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                               </div>
                                             </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Estado</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('estado', $facturacion->estado, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('estado', $facturacion->estado, array('class' => 'form-control','placeholder'=>'Ingrese Estado' ,'Required' => 'Required'))}}
                                               </div>
                                             </div>
 
                                             <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Código Postal</label>
                                             <div class="col-md-12">
-                                                  {{Form::text('c_postal', $facturacion->c_postal, array('class' => 'form-control','placeholder'=>'Ingrese dirección' ))}}
+                                                  {{Form::text('c_postal', $facturacion->c_postal, array('class' => 'form-control','placeholder'=>'Ingrese dirección','Required' => 'Required' ))}}
                                               </div>
                                             </div>
 
@@ -352,7 +353,7 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Fecha inicio</label>
                                             <div class="col-md-12 ">
-                                                  {{Form::date('f_inicio',$facturacion->f_inicio, array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio'))}}
+                                                  {{Form::date('f_inicio',$facturacion->f_inicio, array('class' => 'form-control','placeholder'=>'Ingrese fecha inicio','Required' => 'Required'))}}
                                             </div>
                                         </div>
 
@@ -363,7 +364,7 @@
                                                  {{ Form::select('s_actual', [$facturacion->s_actual => $facturacion->s_actual,
                                                  '1' => 'Activo',
                                                  '2' => 'Inactivo',
-                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control')) }}
+                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control','Required' => 'Required')) }}
                                             </div>
                                         </div>
 
@@ -386,247 +387,6 @@
 
 </div>
 
- {{ Html::script('Calendario/js/moment.min.js') }}
-     {{ Html::script('Calendario/js/bootstrap-datetimepicker.min.js') }}
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#defaultForm').bootstrapValidator({
-        message: 'This value is not valid',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            terceros: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-             regimen: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            p_apellido: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo identificador debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-           s_apellido: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo identificador debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            p_nombre: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 100,
-                        message: 'El campo razón social debe contener un minimo de 2 y un maximo de 100 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            s_nombre: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo identificador debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            t_documento: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            documento: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[- a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            direccion: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 50,
-                        message: 'El campo dirección debe contener un minimo de 2 y un maximo de 50 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[- a-zA-Z0-9_#\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            ciudad: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo ciudad debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[-. a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            telefono: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                     stringLength: {
-                        min: 2,
-                        max: 30,
-                        message: 'El campo teléfono debe contener un minimo de 2 y un maximo de 30 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[+() a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            email: {
-                validators: {
-                   notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    emailAddress: {
-                        message: 'La dirección de correo no es valida'
-                    }
-                }
-            },
-            situacion: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-             start: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'The date is required and cannot be empty'
-                    }
-                }
-            },
-            retefuente: {
-                message: 'The username is not valid',
-                validators: {
-                    notEmpty: {
-                        message: 'Este campo es obligatorio'
-                    },
-                      stringLength: {
-                        min: 1,
-                        max: 4,
-                        message: 'El campo retefiuente debe contener un minimo de 1 y un maximo de 2 Caracteres'
-                    },
-                    regexp: {
-                        regexp: /^[ a-zA-Z0-9_\.ñáéíóú]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-        }
-    });
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('#datetimepicker7').datetimepicker({
-      pickTime: true,
-      format: 'MM/DD/YYYY HH:mm'
-
-    });
-});
-</script>
 
    
 @stop
