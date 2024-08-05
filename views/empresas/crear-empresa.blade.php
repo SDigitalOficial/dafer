@@ -121,7 +121,8 @@ function toggleFields() {
                                                  '8' => 'NJ Foreign Limited Partnership (LF)',
                                                  '9' => 'NJ Foreign Limited Liability Partnership (FLP)',
                                                  '10' => 'NJ Foreign Non-Profit Corportion (NF)',
-                                                 '11' => 'NJ Domestic Non-Profit Veteran Corporation (NV)'], null, array('class' => 'form-control','placeholder'=>'-- Seleccione tipo identificación --','Required' => 'Required')) }}
+                                                 '11' => 'NJ Domestic Non-Profit Veteran Corporation (NV)',
+                                                 '12' => 'S CORPORATION - SCORP'], null, array('class' => 'form-control','placeholder'=>'-- Seleccione tipo identificación --','Required' => 'Required')) }}
                                              </div>
                                         </div>
 

@@ -318,6 +318,19 @@ public function eliminarproducto($id){
   return Redirect('dafer/bancos')->with('status', 'ok_delete');
         }
 
+
+
+  public function eliminarsocio($id){
+ if(!$this->tenantName){
+  $socio = Socio::find($id);
+ }else{
+  $socio = \DigitalsiteSaaS\Dafer\Tenant\Socio::find($id);    
+ } 
+  $socio->delete();
+  return Redirect('dafer/socios')->with('status', 'ok_delete');
+        }
+
+
 public function acceso() {
  return View('dafer::acceso.acceso');
 }
@@ -430,10 +443,51 @@ return view('dafer::bancos.informacion')->with('bancos', $bancos);
      
 }
 
-public function crearbancos(){
 
-return view('dafer::bancos.crear-bancos');
+public function socios(){
+if(!$this->tenantName){
+$socios = \DigitalsiteSaaS\Dafer\Tenant\Socio::all();
+$empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+}
+else{
+$socios = \DigitalsiteSaaS\Dafer\Tenant\Socio::all();
+$empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+}
+return view('dafer::socios.socios')->with('socios', $socios)->with('empresas', $empresas);
      
+}
+
+public function crearbancos(){
+return view('dafer::bancos.crear-bancos');     
+}
+
+
+public function crearsocios(){
+if(!$this->tenantName){
+$empresas = Empresa::all();
+ }else{
+ $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+ }
+
+return view('dafer::socios.crear-socios')->with('empresas', $empresas);    
+}
+
+
+public function editarsocios($id){
+ $input = Input::all();
+ if(!$this->tenantName){
+ $socio = Socio::find($id);
+ }else{
+ $socio = \DigitalsiteSaaS\Dafer\Tenant\Socio::find($id);
+ }
+ $socio->nombres = Input::get('nombres');
+ $socio->apellidos = Input::get('apellidos');
+ $socio->cargo = Input::get('cargo');
+ $socio->porcentaje = Input::get('porcentaje');
+ $socio->empresa_id = Input::get('empresas');
+ $socio->save();
+
+ return Redirect('/dafer/socios')->with('status', 'ok_update');
 }
 
 
@@ -472,6 +526,22 @@ public function crearbanco() {
   return Redirect('/dafer/bancos')->with('status', 'ok_create');
 }
 
+public function crearsocio() {
+ if(!$this->tenantName){
+ $socio = new Socio;
+ }
+ else{
+ $socio = new \DigitalsiteSaaS\Dafer\Tenant\Socio;  
+ }
+ $socio->nombres = Input::get('nombres');
+ $socio->apellidos = Input::get('apellidos');
+ $socio->cargo = Input::get('cargo');
+ $socio->porcentaje = Input::get('porcentaje');
+ $socio->empresa_id = Input::get('empresas');
+ $socio->save();
+
+  return Redirect('/dafer/socios')->with('status', 'ok_create');
+}
 
 public function crearcuenta() {
  if(!$this->tenantName){
@@ -560,6 +630,19 @@ if(!$this->tenantName){
  $banco = \DigitalsiteSaaS\Dafer\Tenant\Banco::find($id); 
  }
  return view('dafer::bancos.editar-banco')->with('banco', $banco);
+}
+
+
+public function editarsocio($id){
+if(!$this->tenantName){
+ $socio = Socio::find($id);
+ $empresas = Empresa::all();
+ }else{
+ $socio = \DigitalsiteSaaS\Dafer\Tenant\Socio::find($id);
+ $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all(); 
+ }
+
+ return view('dafer::socios.editar-socio')->with('socio', $socio)->with('empresas', $empresas);
 }
 
 public function editarbancaria($id){

@@ -36,6 +36,15 @@ Route::get('dafer/eliminar-banco/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioContr
 Route::get('dafer/editar-banco/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarbanco');
 Route::post('dafer/editarbanco/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarbancos');
 
+
+Route::get('dafer/socios', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@socios');
+Route::get('dafer/crear-socio', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearsocios');
+Route::post('dafer/crearsocio', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearsocio');
+Route::get('dafer/editar-socio/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarsocio');
+Route::post('dafer/editarsocios/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarsocios');
+Route::get('dafer/eliminar-socio/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@eliminarsocio');
+
+
 Route::get('dafer/crear-infobancaria/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@infobancaria');
 Route::post('dafer/crear-infobancaria', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearinformacion');
 Route::post('dafer/crear-infoproducto', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearinformacionpro');
