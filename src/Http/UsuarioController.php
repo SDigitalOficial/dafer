@@ -464,9 +464,9 @@ return view('dafer::bancos.crear-bancos');
 
 public function crearsocios(){
 if(!$this->tenantName){
-$empresas = Empresa::all();
+$empresas = Empresa::orderBy('n_negocio', 'asc')->get();
  }else{
- $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+ $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::orderBy('n_negocio', 'asc')->get();
  }
 
 return view('dafer::socios.crear-socios')->with('empresas', $empresas);    
@@ -636,10 +636,10 @@ if(!$this->tenantName){
 public function editarsocio($id){
 if(!$this->tenantName){
  $socio = Socio::find($id);
- $empresas = Empresa::all();
+ $empresas = Empresa::orderBy('n_negocio', 'asc')->get();
  }else{
  $socio = \DigitalsiteSaaS\Dafer\Tenant\Socio::find($id);
- $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all(); 
+ $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::orderBy('n_negocio', 'asc')->get(); 
  }
 
  return view('dafer::socios.editar-socio')->with('socio', $socio)->with('empresas', $empresas);

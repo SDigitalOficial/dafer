@@ -55,7 +55,7 @@
 
 
     <div class="form-group">
-     <label class="col-md-3 control-label" for="example-text-input">Porcentaje Participación</label>
+     <label class="col-md-3 control-label" for="example-text-input">Empresa</label>
       <div class="col-md-12">
        <select name="empresas" id="cars" class="form-control" required>
         <option value="">Seleccionar Empresa</option>
