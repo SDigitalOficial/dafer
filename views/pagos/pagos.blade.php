@@ -51,6 +51,11 @@
                                                     </div>
 
                                                     <div class="form-group m-l-10">
+                                                        <label class="sr-only" for="exampleInputPassword2">Nota</label>
+                                                        <textarea class="form-control ml-2" name="notas" id="exampleInputPassword2" placeholder="Notas Proceso" required> </textarea>
+                                                    </div>
+
+                                                    <div class="form-group m-l-10">
                                     
 
                                                         <input type="hidden" class="form-control ml-2" value="{{Request::segment(3)}}" name="empresa_id" id="exampleInputPassword2" placeholder="Password">

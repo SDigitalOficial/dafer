@@ -15,6 +15,7 @@ use Hyn\Tenancy\Models\Website;
 use Hyn\Tenancy\Repositories\HostnameRepository;
 use Hyn\Tenancy\Repositories\WebsiteRepository;
 use DigitalsiteSaaS\Facturacion\Empresa;
+use DigitalsiteSaaS\Facturacion\Notas;
 use Request;
 
 
@@ -135,10 +136,10 @@ public function actualizar($id){
 
 public function empresas(){
 if(!$this->tenantName){
-$facturacion = Empresa::all();
+$facturacion = Empresa::orderBy('n_negocio', 'asc')->get();
 }
 else{
-$facturacion = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+$facturacion = \DigitalsiteSaaS\Dafer\Tenant\Empresa::orderBy('n_negocio', 'asc')->get();
 }
 return view('dafer::empresas.empresas')->with('facturacion', $facturacion);
      
@@ -472,6 +473,74 @@ $empresas = Empresa::orderBy('n_negocio', 'asc')->get();
 return view('dafer::socios.crear-socios')->with('empresas', $empresas);    
 }
 
+public function notas(){
+if(!$this->tenantName){
+$notas = Usuario::all();
+$empresas = Empresa::all();
+$usuarios = Notas::orderBy('id', 'asc')->get();
+ }else{
+$notas = \DigitalsiteSaaS\Dafer\Tenant\Notas::orderBy('created_at', 'asc')->get();
+$usuarios =  \DigitalsiteSaaS\Usuario\Tenant\Usuario::all();
+$empresas =  \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+ }
+
+return view('dafer::notas.notas')->with('notas', $notas)->with('usuarios', $usuarios)->with('empresas', $empresas);    
+}
+
+public function notasempresa($id){
+if(!$this->tenantName){
+$notas = Usuario::where('empresa_id','=',$id)->get();
+$empresas = Empresa::all();
+$usuarios = Notas::orderBy('id', 'asc')->get();
+ }else{
+$notas = \DigitalsiteSaaS\Dafer\Tenant\Notas::where('empresa_id','=',$id)->orderBy('created_at', 'asc')->get(); 
+$usuarios =  \DigitalsiteSaaS\Usuario\Tenant\Usuario::all();
+$empresas =  \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+ }
+
+return view('dafer::notas.notas-empresa')->with('notas', $notas)->with('usuarios', $usuarios)->with('empresas', $empresas);    
+}
+
+
+public function crearnotas(){
+if(!$this->tenantName){
+ $empresas = Empresa::orderBy('n_negocio', 'asc')->get();
+ }else{
+ $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::orderBy('n_negocio', 'asc')->get();
+ }
+
+return view('dafer::notas.crear-notas')->with('empresas', $empresas);;    
+}
+
+
+public function detallenota($id){
+if(!$this->tenantName){
+ $empresas = Empresa::orderBy('n_negocio', 'asc')->get();
+ }else{
+ $usuarios =  \DigitalsiteSaaS\Usuario\Tenant\Usuario::all();
+ $empresas =  \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+ $notas = \DigitalsiteSaaS\Dafer\Tenant\Notas::where('id','=',$id)->get(); 
+ }
+
+return view('dafer::notas.detalle-nota')->with('empresas', $empresas)->with('notas', $notas)->with('usuarios', $usuarios);    
+}
+
+
+public function crearnota() {
+ if(!$this->tenantName){
+ $banco = new Notas;
+ }
+ else{
+ $banco = new \DigitalsiteSaaS\Dafer\Tenant\Notas;  
+ }
+ $banco->nota = Input::get('notas');
+ $banco->empresa_id = Input::get('empresas');
+ $banco->proceso_id = Input::get('procesos');
+ $banco->user_id =  Auth::user()->id;
+ $banco->save();
+
+  return Redirect('/dafer/notas')->with('status', 'ok_create');
+}
 
 public function editarsocios($id){
  $input = Input::all();
@@ -739,7 +808,9 @@ public function crearpagos() {
  }
  $pagos->fecha_pago = Input::get('fecha');
  $pagos->pago_mensual = Input::get('valor');
+ $pagos->notas = Input::get('notas');
  $pagos->empresa_id = Input::get('empresa_id');
+ $pagos->user_id = Auth::user()->id;
  $pagos->save();
 
   return Redirect('/dafer/pagos/'.$pagos->empresa_id)->with('status', 'ok_create');

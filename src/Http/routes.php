@@ -60,6 +60,13 @@ Route::post('dafer/editarproductoc/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioCon
 Route::get('dafer/eliminar-productoc/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@eliminarproductoc');
 Route::get('dafer/editar-productoc/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarproductoc');
 
+Route::get('dafer/notas', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@notas');
+Route::get('dafer/notas-empresa/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@notasempresa');
+Route::get('dafer/crear-notas', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearnotas');
+Route::get('dafer/detalle-nota/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@detallenota');
+
+
+
 Route::get('dafer/eliminar-cuenta/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@eliminarcuenta');
 
 Route::get('dafer/cproductos/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@cproductos');
