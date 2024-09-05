@@ -77,7 +77,7 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Información Adiconal</label>
                                             <div class="col-md-12 date" id="datetimepicker7">
-                                                   {{Form::textarea('informacion', '', array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+                                                   {{Form::textarea('informacion', '', array('class' => 'form-control','placeholder'=>'Ingrese Información Adicional' ))}}
                                             </div>
                                         </div>
                                         

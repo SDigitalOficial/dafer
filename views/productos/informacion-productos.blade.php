@@ -65,7 +65,7 @@
                                                     <th><b>Producto</b></th>
                                                    
                                                 <th><b>Fecha Inicio</b></th>
-                                                <th><b>Fecha Renvación</b></th>
+                                                <th><b>Fecha Renovación</b></th>
                                                  <th><b>Información</b></th>
                                                     <th><b>ACCIONES</b></th>
                                                 </tr>

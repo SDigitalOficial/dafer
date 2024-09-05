@@ -33,10 +33,10 @@
     </div>    
 
     <div class="form-group">
-     <label class="col-md-3 control-label" for="example-text-input">Empresa</label>
+     <label class="col-md-3 control-label" for="example-text-input">Cliente Empresa o Cliente Individual</label>
       <div class="col-md-12">
        <select name="empresas" id="cars" class="form-control" required>
-        <option value="">Seleccionar Empresa</option>
+        <option value="">Seleccionar Cliente Empresa o Cliente Individual</option>
 @foreach($empresas as $empresas)
 
   <option value="{{$empresas->id}}">{{$empresas->n_negocio}}</option>

@@ -342,9 +342,9 @@ function toggleFields() {
                                           <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Número de identificación</label>
                                             <div class="col-md-12">
-                                                {{Form::text('n_identificacion', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación', 'data-mask' => '999-99-9999','Required' => 'Required','id' => 'n_identificacion'  ))}}
+                                                {{Form::text('n_identificacion', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación', 'data-mask' => '999-99-9999','id' => 'n_identificacion'  ))}}
 
-                                                 {{Form::text('n_identificacion', '', array('class' => 'form-control','placeholder'=>'Ingrese número identificación', 'data-mask' => '999-99-9999','Required' => 'Required','id' => 'n_identificacion1'  ))}}
+                                                 
                                             </div>
                                         </div>
 
