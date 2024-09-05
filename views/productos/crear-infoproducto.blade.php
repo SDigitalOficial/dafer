@@ -17,6 +17,12 @@
 
 @section('ContenidoSite-01')
 
+@if(Auth::user()->rol_id == 31)
+
+<div class="container text-center">
+   <h1>No tienes permisos para crear información Productos, contactate con el Administrador</h1> 
+</div>
+@else
 <div class="row">
                                 <div class="col-md-12 col-xl-10 offset-xl-2">
                                     <div class="content-header">
@@ -41,30 +47,36 @@
                                   {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('dafer/crear-infoproducto'))) }}
 
 
-                                            <div class="form-group">
-                                            <label class="col-md-3 control-label" for="example-select">Producto</label>
-                                            <div class="col-md-12">
+                                  <div class="form-group">
+                                   <label class="col-md-3 control-label" for="example-select">Producto</label>
+                                    <div class="col-md-12">
+                                     <select name="producto" id="inputConcepto" class="form-control">
+                                      <option value="" disabled selected>Seleccione Producto</option>
+                                       @foreach($productos as $productos)
+                                        <option value="{{$productos->id}}">{{$productos->producto}}</option>
+                                       @endforeach
+                                     </select>
+                                    </div>
+                                  </div>
 
-                                                <select name="producto" id="inputConcepto" class="form-control">
-        <option value="" disabled selected>Seleccione Producto</option>
-        @foreach($productos as $productos)
-          <option value="{{$productos->id}}">{{$productos->producto}}</option>
-         @endforeach
-       </select>
-                                             </div>
-                                        </div>
+                                  <div class="form-group ">
+                                   <label class="col-md-3 control-label" for="exampleInputPassword2">Fecha Inicio</label>
+                                    <div class="col-md-12">
+                                     <input type="date" class="form-control ml-2" name="inicio" id="exampleInputPassword2" placeholder="Fecha de Inicio">
+                                    </div>
+                                   </div>
 
-                                          <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputPassword2">Fecha Inicio</label>
-                                                        <input type="date" class="form-control ml-2" name="inicio" id="exampleInputPassword2" placeholder="Fecha de Inicio">
-                                                    </div>
+                                   <div class="form-group ">
+                                    <label class="col-md-3 control-label" for="exampleInputPassword2">Fecha  de Renovación</label>
+                                     <div class="col-md-12">   
+                                      <input type="date" class="form-control ml-2" name="renovacion" id="exampleInputPassword2" placeholder="Fecha de Renovación">
+                                     </div>
+                                   </div>
 
-
-                                                      <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputPassword2">Fecha  de Renovación</label>
-                                                        <input type="date" class="form-control ml-2" name="renovacion" id="exampleInputPassword2" placeholder="Fecha de Renovación">
-                                                    </div>
-
+                                   <div class="form-group m-l-10">
+                                    <label class="col-md-3 control-label" for="example-select">Información Adicional</label>
+                                    <textarea class="form-control ml-2" name="informacion" id="exampleInputPassword2" placeholder="Información Adicional" required></textarea>
+                                  </div>
                                      
                                         
 
@@ -76,7 +88,7 @@
                                           
                                         <div class="form-group form-actions">
                                             <div class="col-md-9 col-md-offset-3">
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i>Crear Información</button>
                                                 <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
                                             </div>
                                         </div>
@@ -584,4 +596,5 @@ $(document).ready(function(){
     });
 });
 </script>
+@endif
 @stop

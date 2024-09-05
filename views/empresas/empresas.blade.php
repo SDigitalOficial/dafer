@@ -100,8 +100,8 @@
         </td>
           <td class="text-center">
            <div class="btn-group">
-           
-       <a href="<?=URL::to('dafer/editar-empresa');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="left" title="Editar Usuario" class="btn btn-primary"><i class="mdi mdi-tooltip-edit"></i></span></a>
+        <a href="<?=URL::to('dafer/socios-empresa');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="left" title="Ver Socios" class="btn btn-primary"><i class="fas fa-users"></i></span></a>   
+       <a href="<?=URL::to('dafer/editar-empresa');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Editar Empresa" class="btn btn-primary"><i class="mdi mdi-tooltip-edit"></i></span></a>
        <a href="<?=URL::to('dafer/pagos');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="bottom" title="Registrar Pagos Contables" class="btn btn-primary"><i class="fas fa-money-check"></i></span></a>
        <a href="<?=URL::to('dafer/informacion-bancaria');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Información Bancaria" class="btn btn-primary"><i class="mdi mdi-bank"></i></span></a>
        <a href="<?=URL::to('dafer/informacion-producto');?>/{{$facturacion->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="bottom" title="Productos/Servicios" class="btn btn-primary"><i class="fas fa-shopping-bag"></i></span></a>

@@ -42,7 +42,7 @@
 <div class="container">
 <div class="card">
  <div class="card-body">
-  <h4 class="mt-0 header-title"><b>CLIENTES REGISTRADOS</b></h4>
+  <h4 class="mt-0 header-title"><b>NOTAS REGISTRADAS</b></h4>
    <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
 
     <thead>
@@ -53,7 +53,7 @@
       <th><b>Proceso</b></th>
       <th><b>Fecha Creación</b></th>
       <th><b>Empresa</b></th>
-      <th><b>Actialización</b></th>
+      <th><b>Creación</b></th>
       <th><b>ACCIONES</b></th>
      </tr>
     </thead>
@@ -74,7 +74,26 @@
           @endforeach
         </td>
         <td>
-        {{$notas->proceso_id}}
+        @if($notas->proceso_id == 1)
+         Registro de Negocios
+        @elseif($notas->proceso_id == 2)
+         Impuestos Corporativos
+        @elseif($notas->proceso_id == 3)
+         Impuestos Personales
+        @elseif($notas->proceso_id == 4)
+         Contabilidad
+        @elseif($notas->proceso_id == 5)
+         Licencias
+        @elseif($notas->proceso_id == 6)
+         Nómina
+        @elseif($notas->proceso_id == 7)
+         Acuerdos de Pago
+        @elseif($notas->proceso_id == 8)
+         Marketing
+        @elseif($notas->proceso_id == 9)
+         Aplicación de Beneficios
+        @endif
+    
         </td>
         <td>{{$notas->created_at}}</td>
         <td>

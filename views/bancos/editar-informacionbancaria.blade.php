@@ -16,7 +16,12 @@
     @stop
 
 @section('ContenidoSite-01')
+@if(Auth::user()->rol_id == 31)
 
+<div class="container text-center">
+   <h1>No tienes permisos para editar Información Bancaria, contactate con el Administrador</h1> 
+</div>
+@else
 
 <div class="container">
   <?php $status=Session::get('status'); ?>
@@ -66,14 +71,14 @@
                                     <!-- Basic Form Elements Content -->
                                   {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('/dafer/editar-infobancarias/'.Request::segment(3)))) }}
                                   
-     @foreach($banco as $bancosa)
-                                  @endforeach
+   
                                             <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-select">Banco</label>
                                             <div class="col-md-12">
-
+  @foreach($banco as $banco)
+                                  @endforeach
                                                 <select name="banco" id="inputConcepto" class="form-control">
-        <option value="{{$bancosa->banco_id}}" selected>{{$bancosa->banco}}</option>
+        <option value="{{$banco->banco_id}}" selected>{{$banco->banco}}</option>
         @foreach($bancos as $bancos)
           <option value="{{$bancos->id}}">{{$bancos->banco}}</option>
          @endforeach
@@ -84,14 +89,14 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Usuario</label>
                                             <div class="col-md-12">
-                                                {{Form::text('usuario', $bancosa->usuario, array('class' => 'form-control','placeholder'=>'Ingrese número identificación' ))}}
+                                                {{Form::text('usuario', $banco->usuario, array('class' => 'form-control','placeholder'=>'Ingrese número identificación' ))}}
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Contraseña</label>
                                             <div class="col-md-9">
-                                                {{Form::text('password', $bancosa->password, array('class' => 'form-control','placeholder'=>'Nombre Representante' ))}}
+                                                {{Form::text('password', $banco->password, array('class' => 'form-control','placeholder'=>'Nombre Representante' ))}}
                                             </div>
                                         </div>
 
@@ -99,15 +104,15 @@
                                          <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-password-input">Información Adiconal</label>
                                             <div class="col-md-12 date" id="datetimepicker7">
-                                                   {{Form::textarea('informacion', $bancosa->informacion, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+                                                   {{Form::textarea('informacion', $banco->informacion, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
                                             </div>
                                         </div>
                                         
 
                                       
-                                        {{Form::hidden('empresa_id', $bancosa->empresa_id, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+                                        {{Form::hidden('empresa_id', $banco->empresa_id, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
 
-                                        {{Form::hidden('banco_id', $bancosa->banco_id, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
+                                        {{Form::hidden('banco_id', $banco->banco_id, array('class' => 'form-control','placeholder'=>'Ingrese Telefono' ))}}
                                         
     
 
@@ -623,4 +628,5 @@ $(document).ready(function(){
     });
 });
 </script>
+@endif
 @stop

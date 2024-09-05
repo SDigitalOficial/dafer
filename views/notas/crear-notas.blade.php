@@ -8,7 +8,7 @@
                                     <div class="content-header">
  <ul class="nav-horizontal text-center">
 
-   <a class="btn btn-primary waves-effect waves-light" href="/dafer/bancos"><i class="mdi mdi-bank"></i> Bancos</a>
+   <a class="btn btn-primary waves-effect waves-light" href="/dafer/notas"><i class="mdi mdi-bank"></i> Notas</a>
  
 
  </ul>
@@ -50,11 +50,15 @@
        <select name="procesos" id="cars" class="form-control" required>
         <option value="" selected>Seleccionar Proceso</option>
 
-  <option value="1">Bancos</option>
-  <option value="2">Empresa</option>
-  <option value="3">Información Bancaria</option>
-  <option value="4">Socios</option>
-  <option value="5">Otra</option>
+  <option value="1">Registro de Negocios</option>
+  <option value="2">Impuestos Corporativos</option>
+  <option value="3">Impuestos Personales</option>
+  <option value="4">Contabilidad</option>
+  <option value="5">Licencias</option>
+  <option value="5">Nómina</option>
+  <option value="5">Acuerdos de Pago</option>
+  <option value="5">Marketing</option>
+  <option value="5">Aplicación de Beneficios</option>
 
 </select>
       </div>

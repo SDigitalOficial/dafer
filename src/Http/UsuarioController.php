@@ -406,6 +406,7 @@ public function crearinformacionpro() {
  $banco->inicio = Input::get('inicio');
  $banco->fin = Input::get('renovacion');
  $banco->empresa_id = Input::get('empresa_id');
+ $banco->informacion = Input::get('informacion');
  $banco->save();
 
   return Redirect('/dafer/informacion-producto/'.$banco->empresa_id)->with('status', 'ok_create');
@@ -424,6 +425,7 @@ public function editarproductosc($id){
  $producto->inicio = Input::get('inicio');
  $producto->fin = Input::get('renovacion');
  $producto->empresa_id = Input::get('empresa_id');
+ $producto->informacion = Input::get('informacion');
  $producto->save();
 
  return Redirect('dafer/informacion-producto/'.$producto->empresa_id)->with('status', 'ok_create');
@@ -457,6 +459,21 @@ $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
 return view('dafer::socios.socios')->with('socios', $socios)->with('empresas', $empresas);
      
 }
+
+
+public function sociosempresa($id){
+if(!$this->tenantName){
+$socios = \DigitalsiteSaaS\Dafer\Tenant\Socio::where('id','=',$id)->get();
+$empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+}
+else{
+$socios = \DigitalsiteSaaS\Dafer\Tenant\Socio::where('id','=',$id)->get();
+$empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
+}
+return view('dafer::socios.socios')->with('socios', $socios)->with('empresas', $empresas);
+     
+}
+
 
 public function crearbancos(){
 return view('dafer::bancos.crear-bancos');     
@@ -623,6 +640,7 @@ public function crearcuenta() {
  $cuenta->correo = Input::get('correo');
  $cuenta->contrasena = Input::get('contrasena');
  $cuenta->empresa_id = Input::get('empresa_id');
+ $cuenta->informacion = Input::get('informacion');
  $cuenta->save();
 
   return Redirect('/dafer/cuentas-asignadas/'.$cuenta->empresa_id)->with('status', 'ok_create');
@@ -630,6 +648,36 @@ public function crearcuenta() {
 
 
 
+public function editarcuenta($id) {
+  $input = Input::all();
+ if(!$this->tenantName){
+
+ $cuenta = Cuentas::find($id);;
+ }
+ else{
+ $cuenta = \DigitalsiteSaaS\Dafer\Tenant\Cuentas::find($id);
+ }
+ $cuenta->plataforma = Input::get('plataforma');
+ $cuenta->correo = Input::get('correo');
+ $cuenta->contrasena = Input::get('contrasena');
+ $cuenta->empresa_id = Input::get('empresa_id');
+ $cuenta->informacion = Input::get('informacion');
+ $cuenta->save();
+
+  return Redirect('/dafer/cuentas-asignadas/'.$cuenta->empresa_id)->with('status', 'ok_update');
+
+}
+
+public function editcuenta($id){
+if(!$this->tenantName){
+$cuentas = Cuentas::find($id);
+}
+else{
+$cuentas = \DigitalsiteSaaS\Dafer\Tenant\Cuentas::find($id);
+}
+return view('dafer::cuentas.editar')->with('cuentas', $cuentas);
+     
+}
 
 
 
@@ -721,7 +769,6 @@ if(!$this->tenantName){
  }else{
  $banco = \DigitalsiteSaaS\Dafer\Tenant\Informacion::join('dafer_bancos','dafer_bancos.id', '=', 'dafer_infobancaria.banco_id')->where('dafer_infobancaria.id', '=', $id)->get(); 
  $bancos = \DigitalsiteSaaS\Dafer\Tenant\Banco::all();
-
  }
 
  return view('dafer::bancos.editar-informacionbancaria')->with('banco', $banco)->with('bancos', $bancos);
@@ -741,7 +788,7 @@ public function posteditarbancaria($id){
  $banco->empresa_id = Input::get('empresa_id');
  $banco->banco_id = Input::get('banco_id');
  $banco->save();
- return Redirect('/dafer/editar-infobancaria/'.$banco->empresa_id)->with('status', 'ok_update');
+ return Redirect('/dafer/informacion-bancaria/'.$banco->empresa_id)->with('status', 'ok_update');
 }
 
 
@@ -853,6 +900,7 @@ public function editarpagos($id){
  $pagos->fecha_pago = Input::get('fecha');
  $pagos->pago_mensual = Input::get('valor');
  $pagos->empresa_id = Input::get('empresa_id');
+ $pagos->notas = Input::get('notas');
  $pagos->save();
  return Redirect('/dafer/pagos/'.$pagos->empresa_id)->with('status', 'ok_update');
 }

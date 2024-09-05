@@ -4,7 +4,10 @@
 
   @section('ContenidoSite-01')
 
+@if(Auth::user()->rol_id == 31)
 
+
+@else
  <div class="container">
   <?php $status=Session::get('status'); ?>
   @if($status=='ok_create')
@@ -41,20 +44,26 @@
                                             <div class="general-label">
                                                 {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('dafer/crear-cuentas'))) }}
                                                     <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputEmail2">Plataforma</label>
-                                                        <input type="text" class="form-control ml-2" name="plataforma" id="exampleInputEmail2" placeholder="Plataforma" required>
+                                                        <label class="col-md-3 control-label" for="example-select">Plataforma</label>
+                                                        <input type="text" class="form-control ml-2" name="plataforma" id="exampleInputEmail2" placeholder="Ingresa Plataforma" required>
                                                     </div>
                                                         
                                                     <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputPassword2">Correo/Usuario</label>
-                                                        <input type="text" class="form-control ml-2" name="correo" id="exampleInputPassword2" placeholder="Correo/Usuario" required>
+                                                    
+                                                        <label class="col-md-3 control-label" for="example-select">Correo/usuario</label>
+                                                        <input type="text" class="form-control ml-2" name="correo" id="exampleInputPassword2" placeholder="Ingrese Correo/Usuario" required>
                                                     </div>
 
                                                     <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
-                                                        <input type="text" class="form-control ml-2" name="contrasena" id="exampleInputPassword2" placeholder="Password" required>
+                                                        <label class="col-md-3 control-label" for="example-select">Contraseña</label>
+                                                        <input type="text" class="form-control ml-2" name="contrasena" id="exampleInputPassword2" placeholder="Ingrese Contraseña" required>
 
                                                         <input type="hidden" class="form-control ml-2" value="{{Request::segment(3)}}" name="empresa_id" id="exampleInputPassword2" placeholder="Password">
+                                                    </div>
+
+                                                    <div class="form-group m-l-10">
+                                                        <label class="col-md-3 control-label" for="example-select">Información Adicional</label>
+                                                        <textarea class="form-control ml-2" name="informacion" id="exampleInputPassword2" placeholder="Información Adicional" required></textarea>
                                                     </div>
                                                    
                                                     <button type="submit" class="btn btn-primary ml-2">Crear Plataforma</button>
@@ -65,7 +74,7 @@
                                 </div> <!-- end col -->
                             </div> <!-- end row -->
 
-
+@endif
 
                             <div class="row">
                                 <div class="col-md-10 offset-md-1">
@@ -106,7 +115,7 @@
            <div class="btn-group">
            
 
-       <a href="<?=URL::to('dafer/editar-cuenta');?>/{{$datos->id}}"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Información Bancaria" class="btn btn-primary"><i class="fas fa-user-edit"></i></span></a>
+       <a href="<?=URL::to('dafer/editar-cuentas');?>/{{$datos->id}}"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Información Cuentas" class="btn btn-primary"><i class="fas fa-user-edit"></i></span></a>
            <a href="<?=URL::to('dafer/eliminar-cuenta/');?>/{{$datos->id}}" onclick="return confirm('¿Está seguro que desea eliminar el registro?')"><button ="button" class="btn btn-danger" data-toggle="tooltip" data-placement="right" title="Eliminar Usuario"><i class="fas fa-trash-alt"></i></button></a>
            </div>
           </td>

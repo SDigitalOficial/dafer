@@ -16,7 +16,12 @@
     @stop
 
 @section('ContenidoSite-01')
+@if(Auth::user()->rol_id == 31)
 
+<div class="container text-center">
+   <h1>No tienes permisos para crear Información Bancaria, contactate con el Administrador</h1> 
+</div>
+@else
 <div class="row">
                                 <div class="col-md-12 col-xl-10 offset-xl-2">
                                     <div class="content-header">
@@ -593,4 +598,5 @@ $(document).ready(function(){
     });
 });
 </script>
+@endif
 @stop

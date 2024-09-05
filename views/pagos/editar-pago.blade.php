@@ -4,7 +4,12 @@
 
   @section('ContenidoSite-01')
 
+@if(Auth::user()->rol_id == 31)
 
+<div class="container text-center">
+   <h1>No tienes permisos para editar Pagos, contactate con el Administrador</h1> 
+</div>
+@else
 
 
  <div class="col-md-10 offset-md-1">
@@ -42,12 +47,12 @@
                                             <div class="general-label">
                                                 {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('dafer/editarpagos/'.$pagos->id))) }}
                                                     <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputEmail2">Valor Pago</label>
+                                                        <label class="col-md-3 control-label" for="exampleInputPassword2">Valor Pago</label>
                                                         <input type="text" class="form-control ml-2" name="valor" id="exampleInputEmail2" placeholder="Valor Pago" value="{{$pagos->pago_mensual}}" required>
                                                     </div>
                                                         
                                                     <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputPassword2">Fecha de Pago</label>
+                                                        <label class="col-md-3 control-label" for="exampleInputPassword2">Fecha  de Pago</label>
                                                         <input type="date" class="form-control ml-2" name="fecha" id="exampleInputPassword2" value="{{$pagos->fecha_pago}}" placeholder="Fecha de Pago" required>
                                                     </div>
 
@@ -55,6 +60,11 @@
                                     
 
                                                         <input type="hidden" class="form-control ml-2" value="{{$pagos->empresa_id}}" name="empresa_id" id="exampleInputPassword2" placeholder="Password">
+                                                    </div>
+
+                                                     <div class="form-group m-l-10">
+                                                         <label class="col-md-3 control-label" for="exampleInputPassword2">Información Adicional</label>
+                                                        <textarea class="form-control ml-2" name="notas" id="exampleInputPassword2" placeholder="Notas Proceso" required> {{$pagos->notas}}</textarea>
                                                     </div>
                                                    
                                                     <button type="submit" class="btn btn-primary ml-2">Editar Registro</button>
@@ -69,6 +79,6 @@
 
   @foreach($pagos as $pagos)
   @endforeach
-               
+     @endif          
 
   @stop

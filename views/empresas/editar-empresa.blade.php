@@ -15,6 +15,13 @@
 
 @section('ContenidoSite-01')
 
+@if(Auth::user()->rol_id == 31)
+
+<div class="container text-center">
+   <h1>No tienes permisos para editar Empresas, contactate con el Administrador</h1> 
+</div>
+@else
+
 <div class="container">
   <?php $status=Session::get('status'); ?>
   @if($status=='ok_create')
@@ -388,6 +395,6 @@
 
 </div>
 
-
+@endif
    
 @stop

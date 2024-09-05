@@ -3,7 +3,12 @@
 
  @section('ContenidoSite-01')
 
+@if(Auth::user()->rol_id == 31)
 
+<div class="container text-center">
+   <h1>No tienes permisos para editar Usuarios, contactate con el Administrador</h1> 
+</div>
+@else
 <div class="row">
                                 <div class="col-md-12 col-xl-10 offset-xl-2">
                                     <div class="content-header">
@@ -95,7 +100,7 @@
    {{ Html::script('modulo-usuarios/validaciones/crear-usuario.js') }}
   {{ Html::script('//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js') }} 
  </footer>
- 
+ @endif
 @stop
 
 

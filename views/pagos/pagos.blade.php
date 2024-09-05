@@ -3,7 +3,9 @@
  
 
   @section('ContenidoSite-01')
+@if(Auth::user()->rol_id == 31)
 
+@else
 
 
 
@@ -41,17 +43,17 @@
                                             <div class="general-label">
                                                 {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('dafer/crear-pagos'))) }}
                                                     <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputEmail2">Valor Pago</label>
+                                                         <label class="col-md-3 control-label" for="exampleInputPassword2">Valor Pago</label>
                                                         <input type="text" class="form-control ml-2" name="valor" id="exampleInputEmail2" placeholder="Valor Pago" required>
                                                     </div>
                                                         
                                                     <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputPassword2">Fecha de Pago</label>
+                                                        <label class="col-md-3 control-label" for="exampleInputPassword2">Fecha  de Pago</label>
                                                         <input type="date" class="form-control ml-2" name="fecha" id="exampleInputPassword2" placeholder="Fecha de Pago" required>
                                                     </div>
 
                                                     <div class="form-group m-l-10">
-                                                        <label class="sr-only" for="exampleInputPassword2">Nota</label>
+                                                         <label class="col-md-3 control-label" for="exampleInputPassword2">Información Adicional</label>
                                                         <textarea class="form-control ml-2" name="notas" id="exampleInputPassword2" placeholder="Notas Proceso" required> </textarea>
                                                     </div>
 
@@ -69,7 +71,7 @@
                                 </div> <!-- end col -->
                             </div> <!-- end row -->
 
-
+@endif
 
                             <div class="row">
                                 <div class="col-md-10 offset-md-1">

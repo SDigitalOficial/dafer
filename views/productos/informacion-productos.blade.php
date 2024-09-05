@@ -63,8 +63,10 @@
 
                                                 <tr>
                                                     <th><b>Producto</b></th>
-                                                    <th><b>Empresa</b></th>
-                                                <th><b>Creación</b></th>
+                                                   
+                                                <th><b>Fecha Inicio</b></th>
+                                                <th><b>Fecha Renvación</b></th>
+                                                 <th><b>Información</b></th>
                                                     <th><b>ACCIONES</b></th>
                                                 </tr>
                                                 </thead>
@@ -74,8 +76,10 @@
            @foreach($datos as $datos)                                      
          <tr>
           <td class="text-center">{{ $datos->producto}}</td>
-          <td class="text-center">{{ $datos->empresa_id}}</td>
-          <td>{{ $datos->created_at}}</td>
+      
+          <td>{{ $datos->inicio}}</td>
+          <td>{{ $datos->fin}}</td>
+          <td>{{ $datos->informacion}}</td>
           <td class="text-center">
            <div class="btn-group">
            

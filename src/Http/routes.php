@@ -32,12 +32,17 @@ Route::get('dafer/bancos', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@bancos'
 Route::get('dafer/crear-banco', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearbancos');
 Route::post('dafer/crear-banco', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearbanco');
 Route::post('dafer/crear-cuentas', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearcuenta');
+Route::post('dafer/editar-cuenta/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarcuenta');
+Route::get('dafer/editar-cuentas/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editcuenta');
 Route::get('dafer/eliminar-banco/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@eliminarbanco');
 Route::get('dafer/editar-banco/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarbanco');
 Route::post('dafer/editarbanco/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarbancos');
 
 
 Route::get('dafer/socios', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@socios');
+Route::get('dafer/socios-empresa/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@sociosempresa');
+
+
 Route::get('dafer/crear-socio', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearsocios');
 Route::post('dafer/crearsocio', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@crearsocio');
 Route::get('dafer/editar-socio/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarsocio');

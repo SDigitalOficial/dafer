@@ -69,7 +69,12 @@ function toggleFields() {
 
 @section('ContenidoSite-01')
 
+@if(Auth::user()->rol_id == 31)
 
+<div class="container text-center">
+   <h1>No tienes permisos para crear Empresas, contactate con el Administrador</h1> 
+</div>
+@else
 
 <div class="container">   
  <div class="row">
@@ -484,7 +489,7 @@ function toggleFields() {
 
 </div>
     
-
+@endif
  <!-- Parsley js -->
      
 
