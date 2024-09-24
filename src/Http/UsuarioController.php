@@ -214,6 +214,8 @@ public function create() {
  $facturacion->c_postal_2 = Input:: get ('c_postal_2');
  $facturacion->f_inicio = Input:: get ('f_inicio');
  $facturacion->s_actual = Input:: get ('s_actual');
+ $facturacion->e_actual = Input:: get ('e_actual');
+ $facturacion->t_cliente = Input:: get ('t_cliente');
  $facturacion->save();
 
   return Redirect('/dafer/empresas')->with('status', 'ok_create');
@@ -247,6 +249,8 @@ public function actualizarempresa($id){
  $facturacion->c_postal_2 = Input:: get ('c_postal_2');
  $facturacion->f_inicio = Input:: get ('f_inicio');
  $facturacion->s_actual = Input:: get ('s_actual');
+ $facturacion->e_actual = Input:: get ('e_actual');
+ $facturacion->t_cliente = Input:: get ('t_cliente');
  $facturacion->save();
 
  return Redirect('/dafer/editar-empresa/'.$id)->with('status', 'ok_update');

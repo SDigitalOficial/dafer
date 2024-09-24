@@ -55,10 +55,11 @@
   <option value="3">Impuestos Personales</option>
   <option value="4">Contabilidad</option>
   <option value="5">Licencias</option>
-  <option value="5">Nómina</option>
-  <option value="5">Acuerdos de Pago</option>
-  <option value="5">Marketing</option>
-  <option value="5">Aplicación de Beneficios</option>
+  <option value="6">Nómina</option>
+  <option value="7">Acuerdos de Pago</option>
+  <option value="8">Marketing</option>
+  <option value="9">Aplicación de Beneficios</option>
+  <option value="10">Auditoria</option>
 
 </select>
       </div>

@@ -221,8 +221,25 @@
                                             <div class="col-md-12">
                                                  {{ Form::select('s_actual', [$facturacion->s_actual => $facturacion->s_actual,
                                                  '1' => 'Activo',
-                                                 '2' => 'Inactivo',
-                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control','Required' => 'Required')) }}
+                                                 '2' => 'Inactivo'], null, array('class' => 'form-control','Required' => 'Required')) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Situación Actual</label>
+                                            <div class="col-md-12">
+                                                 {{ Form::select('e_actual', [$facturacion->e_actual => $facturacion->e_actual,
+                                                 '1' => 'Al día',
+                                                 '2' => 'Saldo Pendiente'], null, array('class' => 'form-control','Required' => 'Required')) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Tipo Cliente</label>
+                                            <div class="col-md-12">
+                                                 {{ Form::select('t_cliente', [$facturacion->t_cliente => $facturacion->t_cliente,
+                                                 '1' => 'Int',
+                                                 '2' => 'Ext'], null, array('class' => 'form-control','Required' => 'Required')) }}
                                             </div>
                                         </div>
 
@@ -371,8 +388,25 @@
                                             <div class="col-md-12">
                                                  {{ Form::select('s_actual', [$facturacion->s_actual => $facturacion->s_actual,
                                                  '1' => 'Activo',
-                                                 '2' => 'Inactivo',
-                                                 '3' => 'Saldo Pendiente',], null, array('class' => 'form-control','Required' => 'Required')) }}
+                                                 '2' => 'Inactivo'], null, array('class' => 'form-control','Required' => 'Required')) }}
+                                            </div>
+                                        </div>
+
+                                         <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Situación Actual</label>
+                                            <div class="col-md-12">
+                                                 {{ Form::select('e_actual', [$facturacion->e_actual => $facturacion->e_actual,
+                                                 '1' => 'Al día',
+                                                 '2' => 'Saldo Pendiente'], null, array('class' => 'form-control','Required' => 'Required')) }}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="example-password-input">Tipo Cliente</label>
+                                            <div class="col-md-12">
+                                                 {{ Form::select('t_cliente', [$facturacion->t_cliente => $facturacion->t_cliente,
+                                                 '1' => 'Int',
+                                                 '2' => 'Ext'], null, array('class' => 'form-control','Required' => 'Required')) }}
                                             </div>
                                         </div>
 
