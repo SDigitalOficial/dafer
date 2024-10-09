@@ -1,113 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Dashor - Responsive Bootstrap 4 Admin Dashboard</title>
-        <meta content="Admin Dashboard" name="description" />
-        <meta content="themesdesign" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+<head>
 
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/plugins/animate/animate.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <title>Dasho - Bootstrap 5 Admin Template</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="Dasho Bootstrap admin template made using Bootstrap 5 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords"
+        content="admin templates, bootstrap admin templates, bootstrap 5, dashboard, dashboard templets, sass admin templets, html admin templates, responsive, bootstrap admin templates free download,premium bootstrap admin templates, Dasho, Dasho bootstrap admin template">
+    <meta name="author" content="Phoenixcoded" />
 
-    </head>
+    <!-- Favicon icon -->
+    <link rel="icon" href="/dresses/assets/images/favicon.svg" type="image/x-icon">
+    <!-- fontawesome icon -->
+    <link rel="stylesheet" href="/dresses/assets/fonts/fontawesome/css/fontawesome-all.min.css">
+    <!-- animation css -->
+    <link rel="stylesheet" href="/dresses/assets/plugins/animation/css/animate.min.css">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="/dresses/assets/css/style.css">
 
+</head>
 
-    <body class="fixed-left">
-        <!-- Begin page -->
-        <!--<div class="accountbg"></div>-->
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div class="wrapper-page">
-
-            <div class="card">
-                <div class="card-body">
-
-                    <h3 class="text-center mt-0">
-                        <a href="index.html" class="logo logo-admin"><img src="https://www.dafersolutions.com/wp-content/uploads/2019/01/Logo-web-Dafer-01.png"  alt="logo"></a>
-                    </h3>
-
-                    <h6 class="text-center"></h6>
-
-                    <div class="p-3">
-                        
-                        <form action="{{ url('/login') }}" method="post" id="form-login" class="form-horizontal form-bordered form-control-borderless">
-
-                             {{ csrf_field() }}
-
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Correo Electrónico">
-                                    @if ($errors->has('email'))
-                                    <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                                </div>
+<!-- [ signin-img ] start -->
+<div class="auth-wrapper aut-bg-img-side cotainer-fiuid align-items-stretch">
+    <div class="row align-items-center w-100 align-items-stretch bg-white">
+        <div class="d-none d-lg-flex col-md-8 aut-bg-img d-md-flex justify-content-center">
+            <div class="col-md-8 d-flex">
+                <div class="auth-content d-flex align-items-stretch">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators justify-content-start mx-0">
+                            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                            <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h1 class="text-white mb-5">Login in Elite Able</h1>
+                                <p class="text-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
                             </div>
-
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="password">
-                                    @if ($errors->has('password'))
-                                 <span class="help-block">
-                                  <strong>{{ $errors->first('password') }}</strong>
-                                 </span>
-                                @endif
-                                </div>
+                            <div class="carousel-item">
+                                <h1 class="text-white mb-5">Login in Elite Able</h1>
+                                <p class="text-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
                             </div>
-
-                            <div class="form-group row">
-                                <div class="col-12">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">Remember me</label>
-                                    </div>
-                                </div>
+                            <div class="carousel-item">
+                                <h1 class="text-white mb-5">Login in Elite Able</h1>
+                                <p class="text-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
                             </div>
-
-                            <div class="form-group text-center row m-t-20">
-                                <div class="col-12">
-                                    <button class="btn btn-danger btn-block waves-effect waves-light" type="submit">Ingresar</button>
-                                </div>
-                            </div>
-
-                            <div class="form-group m-t-10 mb-0 row">
-                                <div class="col-sm-7 m-t-20">
-                                    <a href="{{ url('/password/reset') }}" class="text-muted"><i class="mdi mdi-lock"></i> Olvido Contraseña ?</a>
-                                </div>
-                                <div class="col-sm-5 m-t-20">
-                                    <a href="pages-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> </a>
-                                </div>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-md-4 align-items-stret h-100 ad-flex justify-content-center">
+            <div class=" auth-content">
+                <img src="https://www.quincedresses.com/cdn/shop/files/QD_HorizontalPositivo1.png?pad_color=fff&v=1683183863&width=533" alt="" class="img-fluid mb-4">
+                <h4 class="mb-3 f-w-400">Login into your account</h4>
+
+                <form action="{{ url('/login') }}" method="post" id="form-login" class="form-horizontal form-bordered form-control-borderless">
+                {{ csrf_field() }}
+
+                <div class="form-group mb-2">
+                    <label class="form-label">Enter Email</label>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="name@sitename.com">
+                    @if ($errors->has('email'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                    @endif
+                </div>
 
 
-        <!-- jQuery  -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/modernizr.min.js"></script>
-        <script src="assets/js/detect.js"></script>
-        <script src="assets/js/fastclick.js"></script>
-        <script src="assets/js/jquery.slimscroll.js"></script>
-        <script src="assets/js/jquery.blockUI.js"></script>
-        <script src="assets/js/waves.js"></script>
-        <script src="assets/js/jquery.nicescroll.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
+                <div class="form-group mb-3">
+                    <label class="form-label">Enter Password</label>
+                    <input id="password" name="password" type="password" class="form-control  @error('password') is-invalid @enderror" required autocomplete="current-password" placeholder="Allow only max 14 character">
+                    @if ($errors->has('password'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                    @endif
+                </div>
+                
+                <div class="form-group mt-2">
+                    <div class="checkbox checkbox-primary d-inline">
+                        <input type="checkbox" name="checkbox-p-1" id="checkbox-p-1" checked="">
+                        <label for="checkbox-p-1" class="cr">Save credentials</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary mb-4">Login</button>
 
-        <!-- App js -->
-        <script src="assets/js/app.js"></script>
+                </form>
 
-    </body>
+                <p class="mb-2 text-muted">Forgot password? <a href="{{ url('/password/reset') }}" class="f-w-400">Reset</a>
+                </p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- [ signin-img ] end -->
+
+<!-- Required Js -->
+<script src="/dresses/assets/js/vendor-all.min.js"></script>
+<script src="/dresses/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+<div class="footer-fab">
+    <div class="b-bg">
+        <i class="fas fa-question"></i>
+    </div>
+    <div class="fab-hover">
+        <ul class="list-unstyled">
+            <li><a href="../doc/index-bc-package.html" target="_blank" data-text="UI Kit" class="btn btn-icon btn-rounded btn-info m-0"><i class="feather icon-layers"></i></a></li>
+            <li><a href="../doc/index.html" target="_blank" data-text="Document" class="btn btn-icon btn-rounded btn-primary m-0"><i class="feather icon feather icon-book"></i></a></li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+
 </html>
-
