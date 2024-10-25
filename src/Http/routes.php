@@ -94,6 +94,9 @@ Route::post('dafer/crear-pagos', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@c
 Route::get('dafer/eliminar-pago/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@eliminarpagos');
 Route::get('dafer/editar-pago/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarpagos');
 Route::post('dafer/editarpagos/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarpago');
+
+Route::post('dafer/editarpagosxxx/{id}', 'DigitalsiteSaaS\Dafer\Http\UsuarioController@editarpagoxxx');
+
 });
 
 
