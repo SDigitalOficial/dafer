@@ -18,9 +18,7 @@
             
                                             <h4 class="mt-0 header-title">Crear Nota</h4>
 
-                                            <p class="text-muted font-14">Parsley is a javascript form validation
-                                                library. It helps you provide your users with feedback on their form
-                                                submission before sending it to your server.</p>
+                                         
     
     {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm', 'url' => array('dafer/crearnotas'))) }}
 
@@ -49,7 +47,7 @@
       <div class="col-md-12">
        <select name="procesos" id="cars" class="form-control" required>
         <option value="" selected>Seleccionar Proceso</option>
-
+ <option value="" selected>-- Seleccionar Proceso Relacionado -- </option>
   <option value="1">Registro de Negocios</option>
   <option value="2">Impuestos Corporativos</option>
   <option value="3">Impuestos Personales</option>

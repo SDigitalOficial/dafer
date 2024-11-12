@@ -64,9 +64,7 @@
                                         <div class="card-body">
             
                                             <h4 class="mt-0 header-title">Crear Infotrmación Bancaria</h4>
-                                            <p class="text-muted font-14">Parsley is a javascript form validation
-                                                library. It helps you provide your users with feedback on their form
-                                                submission before sending it to your server.</p>
+                                      
                                     
                                     <!-- Basic Form Elements Content -->
                                   {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('/dafer/editar-infobancarias/'.Request::segment(3)))) }}

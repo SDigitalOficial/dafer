@@ -92,6 +92,8 @@
          Marketing
         @elseif($notas->proceso_id == 9)
          Aplicación de Beneficios
+         @elseif($notas->proceso_id == 10)
+         Auditoria
         @endif
     
         </td>
@@ -117,8 +119,8 @@
         </td>
         <td class="text-center">
         <div class="btn-group">
-         <a href="<?=URL::to('/dafer/detalle-nota');?>/{{$notas->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Cuentas Asignadas" class="btn btn-primary"><i class="far fa-list-alt"></i></span></a>
-         <a href="<?=URL::to('/dafer/editar-notas');?>/{{$notas->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Cuentas Asignadas" class="btn btn-primary"><i class="far fa-list-alt"></i></span></a>
+         <a href="<?=URL::to('/dafer/detalle-nota');?>/{{$notas->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Detalle Nota" class="btn btn-primary"><i class="far fa-list-alt"></i></span></a>
+         <a href="<?=URL::to('/dafer/editar-notas');?>/{{$notas->id}}" style="padding: 1px;"><span  id="tip" data-toggle="tooltip" data-placement="top" title="Editar Nota" class="btn btn-primary"><i class="far fa-eye"></i></span></a>
          <a href="<?=URL::to('dafer/eliminar-empresa/');?>/" style="padding: 1px;" onclick="return confirm('¿Está seguro que desea eliminar el registro?')"><button class="btn btn-danger" data-toggle="tooltip" data-placement="right" title="Eliminar Usuario"><i class="fas fa-trash-alt"></i></button></a>
         </div>
         </td>
