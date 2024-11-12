@@ -51,9 +51,9 @@
       <th><b>Nota</b></th>
       <th><b>Usuario</b></th>
       <th><b>Proceso</b></th>
-      <th><b>Fecha Creación</b></th>
-      <th><b>Empresa</b></th>
+      <th><b>Cliente</b></th>
       <th><b>Estado</b></th>
+      <th><b>Fecha</b></th>
       <th><b>ACCIONES</b></th>
      </tr>
     </thead>
