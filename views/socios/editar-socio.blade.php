@@ -8,12 +8,13 @@
 </div>
 @else
 
+@endif
 <div class="row">
                                 <div class="col-md-12 col-xl-10 offset-xl-2">
                                     <div class="content-header">
  <ul class="nav-horizontal text-center">
 
-   <a class="btn btn-primary waves-effect waves-light" href="/dafer/bancos"><i class="mdi mdi-bank"></i> Bancos</a>
+   <a class="btn btn-primary waves-effect waves-light" href="/dafer/bancos"><i class="mdi mdi-bank"></i> Editar Socio</a>
  
 
  </ul>
@@ -124,7 +125,6 @@
   @endforeach
                
 
-@endforeach
 
 
                              
