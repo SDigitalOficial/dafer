@@ -506,11 +506,11 @@ return view('dafer::socios.socios')->with('socios', $socios)->with('empresas', $
 
 public function sociosempresa($id){
 if(!$this->tenantName){
-$socios = \DigitalsiteSaaS\Dafer\Tenant\Socio::where('id','=',$id)->get();
+$socios = \DigitalsiteSaaS\Dafer\Tenant\Socio::where('empresa_id','=',$id)->get();
 $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
 }
 else{
-$socios = \DigitalsiteSaaS\Dafer\Tenant\Socio::where('id','=',$id)->get();
+$socios = \DigitalsiteSaaS\Dafer\Tenant\Socio::where('empresa_id','=',$id)->get();
 $empresas = \DigitalsiteSaaS\Dafer\Tenant\Empresa::all();
 }
 return view('dafer::socios.socios')->with('socios', $socios)->with('empresas', $empresas);
