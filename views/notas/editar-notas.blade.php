@@ -39,12 +39,15 @@
                                         <div class="card-body">
             
                                             <h4 class="mt-0 header-title">Editar Nota</h4>
-
-                                            
+ <p class=" font-14" style="color:#fff">The Buttons extension for DataTables
+                                                provides a common set of options, API methods and styling to display
+                                                buttons on a page that will interact with a DataTable. The core library
+                                                provides the based framework upon which plug-ins can built.
+                                            </p>
     
     {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm', 'url' => array('dafer/editarnotas',$notas->id))) }}
 
-    <div class="form-group">
+    <div class="form-group" style="display: none;">
      <label class="col-md-3 control-label" for="example-text-input">Nota</label>
       <div class="col-md-12">
        {{Form::textarea('notas', $notas->nota, array('class' => 'form-control summernote','placeholder'=>'Ingrese Nota', 'Required'=>'Required','Required'=>'Required'))}}
@@ -52,7 +55,7 @@
       </div>
     </div>    
 
-    <div class="form-group" >
+    <div class="form-group" style="display: none;">
      <label class="col-md-3 control-label" for="example-text-input">Cliente Empresa o Cliente Individual</label>
       <div class="col-md-12">
        <select name="empresas" id="cars" class="form-control" required>
@@ -68,7 +71,7 @@
     </div>
 
 
- <div class="form-group" >
+ <div class="form-group" style="display:none">
                                             <label class="col-md-3 control-label" for="example-password-input">Tipo Cliente</label>
                                             <div class="col-md-12">
                                                  {{ Form::select('procesos', [$notas->proceso_id => $notas->proceso_id,

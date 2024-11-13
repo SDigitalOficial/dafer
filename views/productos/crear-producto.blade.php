@@ -39,7 +39,11 @@
                                         <div class="card-body">
             
                                             <h4 class="mt-0 header-title">Crear Producto y/o Servicio</h4>
-                                         
+                                       <p class=" font-14" style="color:#fff">The Buttons extension for DataTables
+                                                provides a common set of options, API methods and styling to display
+                                                buttons on a page that will interact with a DataTable. The core library
+                                                provides the based framework upon which plug-ins can built.
+                                            </p>
                                     
                                     <!-- Basic Form Elements Content -->
                                   {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm1', 'url' => array('dafer/crearproducto'))) }}

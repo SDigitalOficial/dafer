@@ -24,10 +24,11 @@
             
                                             <h4 class="mt-0 header-title">Editar Socio</h4>
 
-                                            <p class="text-muted font-14">Parsley is a javascript form validation
-                                                library. It helps you provide your users with feedback on their form
-                                                submission before sending it to your server.</p>
-    
+                                           <p class=" font-14" style="color:#fff">The Buttons extension for DataTables
+                                                provides a common set of options, API methods and styling to display
+                                                buttons on a page that will interact with a DataTable. The core library
+                                                provides the based framework upon which plug-ins can built.
+                                            </p>
  
    {{ Form::open(array('method' => 'POST','class' => 'form-horizontal','id' => 'defaultForm', 'url' => array('dafer/editarsocios',$socio->id))) }}
 
